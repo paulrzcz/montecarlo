@@ -54,19 +54,20 @@ public class MonteCarloModel<TValue> {
      * 
      * @param samples Number of paths to add
      */
-    public void addSamples(int samples) throws FunctionEvaluationException {
+    public int addSamples(int samples) throws FunctionEvaluationException {
         for (int i = 0; i < samples; ++i) {
             Path path = pathGenerator.next();
             TValue pathValue = pathValuation.value(path);
             summary.addValue(pathValue);
         }
+        return samples;
     }
 
-    public void addSamples(int minSamples, double eps, int maxSteps)  throws FunctionEvaluationException {
+    public int addSamples(int minSamples, double eps, int maxSteps)  throws FunctionEvaluationException {
         addSamples(minSamples);
         Accumulator<TValue> prev = summary.clone();
         int steps = 1;
-        while(summary.norm(prev) > eps) {
+        while(steps==1 || summary.norm(prev) > eps) {
             addSamples(minSamples);
             prev = summary.clone();
             steps++;
@@ -74,6 +75,7 @@ public class MonteCarloModel<TValue> {
             if (steps>maxSteps)
                 throw new ConvergenceException();
         }
+        return steps*minSamples;
     }
 
     /**
