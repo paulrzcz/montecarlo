@@ -68,8 +68,8 @@ public class MonteCarloModel<TValue> {
         Accumulator<TValue> prev = summary.clone();
         int steps = 1;
         while(steps==1 || summary.norm(prev) > eps) {
-            addSamples(minSamples);
             prev = summary.clone();
+            addSamples(minSamples);
             steps++;
 
             if (steps>maxSteps)
