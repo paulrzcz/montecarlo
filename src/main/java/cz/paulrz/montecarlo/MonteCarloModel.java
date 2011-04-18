@@ -25,7 +25,7 @@ import org.apache.commons.math.random.NormalizedRandomGenerator;
  * evaluate them and collect statistics.
  * 
  */
-public class MonteCarloModel<TValue> {
+public final class MonteCarloModel<TValue> {
     private final Accumulator<TValue> summary;
     private final PathGenerator pathGenerator;
     private final PathValuation<TValue> pathValuation;
@@ -65,10 +65,10 @@ public class MonteCarloModel<TValue> {
 
     public int addSamples(int minSamples, double eps, int maxSteps)  throws FunctionEvaluationException {
         addSamples(minSamples);
-        Accumulator<TValue> prev = summary.clone();
+        Accumulator<TValue> prev = summary.deepCopy();
         int steps = 1;
         while(steps==1 || summary.norm(prev) > eps) {
-            prev = summary.clone();
+            prev = summary.deepCopy();
             addSamples(minSamples);
             steps++;
 

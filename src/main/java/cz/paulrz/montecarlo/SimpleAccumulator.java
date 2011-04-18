@@ -30,7 +30,7 @@ public class SimpleAccumulator implements Accumulator<Double> {
         return FastMath.abs(stats.getMean()-that.stats.getMean());
     }
 
-    public SimpleAccumulator clone() {
+    public SimpleAccumulator deepCopy() {
         return new SimpleAccumulator(this);
     }
 }

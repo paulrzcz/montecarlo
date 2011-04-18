@@ -42,7 +42,7 @@ public class MaxMinCloseAccumulator implements Accumulator<MaxMinClose> {
                 FastMath.abs(close.getMean() - that.close.getMean());
     }
 
-    public MaxMinCloseAccumulator clone() {
+    public MaxMinCloseAccumulator deepCopy() {
         return new MaxMinCloseAccumulator(this);
     }
 

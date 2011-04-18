@@ -22,7 +22,7 @@ package cz.paulrz.montecarlo;
  * Brownian Motion</a> with constant drift and diffusion.
  * 
  */
-public class GeometricBrownianMotionProcess extends StochasticProcess {
+public final class GeometricBrownianMotionProcess extends StochasticProcess {
 
     private final double mu;
     private final double sigma;

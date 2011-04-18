@@ -7,8 +7,8 @@ package cz.paulrz.montecarlo;
  * Time: 09:53 AM
  * To change this template use File | Settings | File Templates.
  */
-public interface Accumulator<T> {
+public interface Accumulator<T>{
     void addValue(T value);
     double norm(Accumulator<T> other);
-    Accumulator<T> clone();
+    Accumulator<T> deepCopy();
 }
