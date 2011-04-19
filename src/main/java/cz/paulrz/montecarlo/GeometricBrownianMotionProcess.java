@@ -52,4 +52,8 @@ public final class GeometricBrownianMotionProcess extends StochasticProcess {
         return sigma * x;
     }
 
+    @Override
+    public String toString() {
+        return "GBM : x0 = "+x0+"; mu = "+mu+"; sigma = "+sigma;
+    }
 }
