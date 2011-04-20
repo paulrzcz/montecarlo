@@ -73,7 +73,7 @@ public final class MonteCarloModel<TValue> {
             steps++;
 
             if (steps>maxSteps)
-                throw new ConvergenceException();
+                return steps*minSamples;
         }
         return steps*minSamples;
     }

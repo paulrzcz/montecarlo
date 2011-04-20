@@ -37,6 +37,10 @@ public class HistoAccumulator implements Accumulator<Double> {
         return 0;
     }
 
+    public Accumulator<Double> deepCopy() {
+        return new HistoAccumulator(this);
+    }
+
     public HistoAccumulator clone() {
         return new HistoAccumulator(this);
     }
