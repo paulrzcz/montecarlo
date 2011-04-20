@@ -17,7 +17,7 @@ public final class SobolPathGenerator implements PathGenerator {
     private final Sobol generator;
 
     public SobolPathGenerator(GenericProcess process, int timeSteps,
-                               double duration) {
+                               double duration) throws Exception {
         this.process = process;
         this.timeSteps = timeSteps;
         this.generator = new Sobol(timeSteps-1); // first point is known

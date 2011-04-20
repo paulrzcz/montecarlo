@@ -241,13 +241,12 @@ public final class Sobol extends BitsStreamGenerator {
     /**
      * @param dim dimension of the Sobol sequence.
      */
-    public Sobol(int dim) {
+    public Sobol(int dim) throws Exception {
         this.dim = dim;
         if (dim > 300) {
-            System.out.println
+                throw new Exception
                     ("Sobol sequence only implemented for dimension at most 300." +
                             "\nExiting.");
-            System.exit(0);
         }
 
 

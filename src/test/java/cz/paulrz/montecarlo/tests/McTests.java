@@ -26,7 +26,7 @@ public class McTests extends TestCase {
     // is sigma^2*t
     private final static double expectedStdDev = 1.0;
 
-    public McTests() {
+    public McTests() throws Exception {
         // mean should be 1.0, and stddev = sqrt(e-1)
         process = new GeometricBrownianMotionProcess(1.0, 0, 1.0);
         LogArrivedPointValuation apv = new LogArrivedPointValuation();

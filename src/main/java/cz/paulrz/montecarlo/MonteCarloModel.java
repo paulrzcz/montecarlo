@@ -60,7 +60,7 @@ public final class MonteCarloModel<TValue> {
      * @param statistics Statistics summary
      */
     public MonteCarloModel(GenericProcess process, double duration, int timeSteps,
-                           PathValuation<TValue> valuation, Accumulator<TValue> statistics) {
+                           PathValuation<TValue> valuation, Accumulator<TValue> statistics) throws Exception {
         this.summary = statistics;
         this.pathGenerator = new SobolPathGenerator(process, timeSteps, duration);
         this.pathValuation = valuation;
