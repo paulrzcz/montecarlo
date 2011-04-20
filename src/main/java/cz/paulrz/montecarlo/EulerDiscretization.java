@@ -23,16 +23,17 @@ import org.apache.commons.math.util.FastMath;
  * Euler equally spaced discretization
  * 
  */
-public class EulerDiscretization implements Discretization {
+public final class EulerDiscretization implements Discretization {
 
     /** {@inheritDoc} */
-    public double drift(StochasticProcess process, double t, double x, double dt) throws FunctionEvaluationException {
+    public double drift(final StochasticProcess process, final double t, final double x,
+                        final double dt) throws FunctionEvaluationException {
         return process.drift(t, x) * dt;
     }
 
     /** {@inheritDoc} */
-    public double diffusion(StochasticProcess process, double t, double x,
-            double dt) throws FunctionEvaluationException {
+    public double diffusion(final StochasticProcess process, final double t, final double x,
+            final double dt) throws FunctionEvaluationException {
         return process.diffusion(t, x) * FastMath.sqrt(dt);
     }
 

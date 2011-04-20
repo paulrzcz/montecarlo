@@ -30,5 +30,5 @@ public interface PathValuation<T> {
      * @param path Path given by Monte Carlo engine
      * @return Valuation of the path
      */
-    T value(Path path);
+    T value(final Path path);
 }

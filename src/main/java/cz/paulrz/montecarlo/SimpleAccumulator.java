@@ -21,12 +21,12 @@ public class SimpleAccumulator implements Accumulator<Double> {
 
     public SummaryStatistics stats;
 
-    public void addValue(Double value) {
+    public void addValue(final Double value) {
         stats.addValue(value);
     }
 
-    public double norm(Accumulator<Double> other) {
-        SimpleAccumulator that = (SimpleAccumulator) other;
+    public double norm(final Accumulator<Double> other) {
+        final SimpleAccumulator that = (SimpleAccumulator) other;
         return FastMath.abs(stats.getMean()-that.stats.getMean());
     }
 

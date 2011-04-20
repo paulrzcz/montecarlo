@@ -31,6 +31,7 @@ package cz.paulrz.montecarlo;
 
 
 import org.apache.commons.math.random.BitsStreamGenerator;
+import org.apache.commons.math.random.MersenneTwister;
 import org.apache.commons.math.util.FastMath;
 
 /**
@@ -76,7 +77,7 @@ import org.apache.commons.math.util.FastMath;
  *
  * @author Michael J. Meyer
  */
-public class Sobol extends BitsStreamGenerator {
+public final class Sobol extends BitsStreamGenerator {
 
     static final int bits = 32;            // we are using 32 bit integers
     static final long N = 4294967296L;     // 2^32
@@ -546,6 +547,22 @@ for(k=0;k<50;k++)
             v[31][5] = (29L << bits - 6);
             v[31][6] = (3L << bits - 7);
         }
+
+
+        // random initialization in dimension bigger than 32
+        MersenneTwister mt = new MersenneTwister();
+        for(k=32;k<dim;k++)
+        {
+            for(int l=0;l<g[k];l++)
+            {
+                double u = mt.nextDouble();
+                long f=(1L<<l+1), n=(int)(f*u);
+                while(n%2==0){ u=mt.nextDouble(); n=(int)(f*u); }
+
+                v[k][l]=(n<<(bits-l-1));
+            }
+        } // end direction integer initialization
+
 
 
 // computation of direction integer v_kl for k>=degree[k]

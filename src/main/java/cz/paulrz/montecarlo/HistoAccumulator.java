@@ -22,8 +22,8 @@ public class HistoAccumulator implements Accumulator<Double> {
 
     public final HashMap<Double, Integer> histo;
 
-    public void addValue(Double x) {
-        double rounded = Math.round(x*1000.0)/1000.0;
+    public void addValue(final Double x) {
+        final double rounded = Math.round(x*1000.0)/1000.0;
         if (histo.containsKey(rounded))
         {
             int v = histo.get(rounded);

@@ -41,5 +41,5 @@ public interface GenericProcess {
      * @param dw Stochastic part
      * @return Position at x+dt, i.e. X(t+dt)
      */
-    double evolve(double t, double x, double dt, double dw) throws FunctionEvaluationException;
+    double evolve(final double t, final double x, final double dt, final double dw) throws FunctionEvaluationException;
 }

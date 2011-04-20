@@ -23,10 +23,10 @@ import org.apache.commons.math.util.FastMath;
  * as path value
  * 
  */
-public class LogArrivedPointValuation implements PathValuation<Double> {
+public final class LogArrivedPointValuation implements PathValuation<Double> {
 
     /** {@inheritedDoc} */
-    public Double value(Path path) {
+    public Double value(final Path path) {
         return FastMath.log(path.getValues()[path.getLength() - 1]
                 / path.getValues()[0]);
     }

@@ -3,6 +3,7 @@ package cz.paulrz.montecarlo.tests;
 import cz.paulrz.montecarlo.*;
 import junit.framework.TestCase;
 import org.apache.commons.math.FunctionEvaluationException;
+import org.apache.commons.math.MathException;
 import org.apache.commons.math.random.GaussianRandomGenerator;
 import org.apache.commons.math.random.JDKRandomGenerator;
 import org.apache.commons.math.stat.descriptive.SummaryStatistics;
@@ -28,21 +29,19 @@ public class McTests extends TestCase {
     public McTests() {
         // mean should be 1.0, and stddev = sqrt(e-1)
         process = new GeometricBrownianMotionProcess(1.0, 0, 1.0);
-        GaussianRandomGenerator grg = new GaussianRandomGenerator(
-                new Sobol(2));
         LogArrivedPointValuation apv = new LogArrivedPointValuation();
         summary = new SimpleAccumulator();
-        mcm = new MonteCarloModel<Double>(grg, process, 1.0, 100, apv, summary);
+        mcm = new MonteCarloModel<Double>(process, 1.0, 100, apv, summary);
     }
 
-    public void testMeanAndVariance() throws FunctionEvaluationException {
-        int iters = mcm.addSamples(1000, 1e-10, 100);
+    public void testMeanAndVariance() throws MathException {
+        int iters = mcm.addSamples(1000, 1e-5, 100);
         double mean = summary.stats.getMean();
         double stddev = summary.stats.getStandardDeviation();
 
         System.out.println(iters);
         assertEquals(expectedMean, mean, 0.01);
-        // assertEquals(expectedStdDev, stddev, 0.05);
+        assertEquals(expectedStdDev, stddev, 0.05);
     }
 
 }

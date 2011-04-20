@@ -23,7 +23,7 @@ package cz.paulrz.montecarlo;
 public class ArrivedPointValuation implements PathValuation<Double> {
 
     /** {@inheritedDoc} */
-    public Double value(Path path) {
+    public Double value(final Path path) {
         return path.getValues()[path.getLength() - 1];
     }
 

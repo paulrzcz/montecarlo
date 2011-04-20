@@ -8,7 +8,7 @@ package cz.paulrz.montecarlo;
  * To change this template use File | Settings | File Templates.
  */
 public interface Accumulator<T>{
-    void addValue(T value);
-    double norm(Accumulator<T> other);
+    void addValue(final T value);
+    double norm(final Accumulator<T> other);
     Accumulator<T> deepCopy();
 }
