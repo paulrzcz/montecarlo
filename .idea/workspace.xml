@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PrimitivePolynomials.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimplePathGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolPathGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolRsg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/FastGaussianRandomGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/RngTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Accumulator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Accumulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/ArrivedPointValuation.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/ArrivedPointValuation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/GenericProcess.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/GenericProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimpleAccumulator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimpleAccumulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,46 +65,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HistoAccumulator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java">
+      <file leaf-file-name="MonteCarloModel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="31" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+            <state line="49" column="21" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogArrivedPointValuation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java">
+      <file leaf-file-name="MaxMinClose.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MaxMinClose.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0">
+            <state line="9" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimitivePolynomials.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PrimitivePolynomials.java">
+      <file leaf-file-name="McTests.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="13" selection-start="2036" selection-end="2036" vertical-scroll-proportion="0.0">
+            <state line="43" column="48" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimplePathGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimplePathGenerator.java">
+      <file leaf-file-name="SobolPathGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolPathGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="18" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
+            <state line="22" column="37" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sobol.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java">
+      <file leaf-file-name="FastGaussianRandomGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/FastGaussianRandomGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="12" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.0">
+            <state line="12" column="61" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RngTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/RngTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="32" selection-start="966" selection-end="966" vertical-scroll-proportion="0.52978057">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InverseCumulativeNormal.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="16" selection-start="3812" selection-end="3812" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,24 +145,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="12" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathValuation.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="18" selection-start="1226" selection-end="1226" vertical-scroll-proportion="1.2225705">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaxMinClose.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MaxMinClose.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,22 +169,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolRsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PrimitivePolynomials.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolPathGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Accumulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/GenericProcess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/ArrivedPointValuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimplePathGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimpleAccumulator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolPathGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/FastGaussianRandomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/RngTest.java" />
       </list>
     </option>
   </component>
@@ -243,6 +234,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -262,9 +254,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,16 +314,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="cz.paulrz.montecarlo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.McTests">
+  <component name="RunManager" selected="JUnit.RngTest">
     <configuration default="false" name="McTests" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false">
         <pattern>
@@ -324,6 +359,34 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Profile " />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RngTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false">
+        <pattern>
+          <option name="PATTERN" value="cz.paulrz.montecarlo.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="montecarlo" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cz.paulrz.montecarlo.tests" />
+      <option name="MAIN_CLASS_NAME" value="cz.paulrz.montecarlo.tests.RngTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -434,8 +497,9 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.McTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RngTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -473,22 +537,22 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39896372" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24939074" sideWeight="0.6701209" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -508,7 +572,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sobol generator is added. Good for mean estimations but not stddev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Few changes of exception handling" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -525,6 +589,7 @@
     <MESSAGE value="Fixed bug in iterative MCM" />
     <MESSAGE value="Clone issue is solved" />
     <MESSAGE value="Sobol generator is added. Good for mean estimations but not stddev" />
+    <MESSAGE value="Few changes of exception handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -534,115 +599,95 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Path.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="24" column="31" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/GeometricBrownianMotionProcess.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="30" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Accumulator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="21" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="32" column="18" selection-start="1226" selection-end="1226" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/GenericProcess.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PrimitivePolynomials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="73" selection-start="1417" selection-end="1417" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="65" column="13" selection-start="2036" selection-end="2036" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimplePathGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="18" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="28" selection-start="8180" selection-end="8180" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MonteCarloModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="12" selection-start="3823" selection-end="3823" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/ArrivedPointValuation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
+        <state line="49" column="21" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MaxMinClose.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="9" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MaxMinCloseAccumulator.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="12" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/HistoAccumulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="31" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/LogArrivedPointValuation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PrimitivePolynomials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="13" selection-start="2036" selection-end="2036" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimplePathGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="18" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/Sobol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="12" selection-start="3378" selection-end="3378" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="43" column="48" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SimpleAccumulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
+        <state line="28" column="14" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/EulerDiscretization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="12" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/MaxMinCloseAccumulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/SobolPathGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="37" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/InverseCumulativeNormal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="16" selection-start="3812" selection-end="3812" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/PathValuation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/FastGaussianRandomGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="18" selection-start="1226" selection-end="1226" vertical-scroll-proportion="1.2225705">
-          <folding />
+        <state line="12" column="61" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/RngTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="32" selection-start="966" selection-end="966" vertical-scroll-proportion="0.52978057">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

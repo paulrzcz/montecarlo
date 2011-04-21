@@ -95,7 +95,7 @@ public final class InverseCumulativeNormal {
      * @param x
      * @returns <code>average + z * sigma</code>
      */
-    public static double op(double x) throws MathException/* @ReadOnly */{
+    public static double op(double x)/* @ReadOnly */{
         double z;
         double r;
 
@@ -105,9 +105,8 @@ public final class InverseCumulativeNormal {
                 x = 1.0;
             } else if (Math.abs(x) < QL_EPSILON) {
                 x = 0.0;
-            } else {
-                throw new MathException(SIGMA_MUST_BE_POSITIVE); // QA:[RG]::verified
-            }
+            } else
+                return Double.NaN;
         }
 
         if (x < xlow) {
