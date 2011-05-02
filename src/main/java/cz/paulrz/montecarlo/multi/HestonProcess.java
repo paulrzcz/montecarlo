@@ -35,6 +35,14 @@ public final class HestonProcess extends StochasticProcess {
         sqrhov = FastMath.sqrt(1.0-rho*rho);
     }
 
+    /**
+     * Uses Feller condition
+     * @return
+     */
+    public boolean isStrictlyPositive() {
+        return (2*kappa*theta) > sigma*sigma;
+    }
+
     @Override
     public DoubleMatrix1D drift(double t, DoubleMatrix1D x) {
         final double[] result = new double[2];

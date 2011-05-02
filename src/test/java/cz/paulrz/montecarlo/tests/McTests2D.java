@@ -38,7 +38,7 @@ public class McTests2D extends TestCase {
                 DoubleFactory1D.dense.make(mu), DoubleFactory2D.dense.make(sigma));
         LogArrivedPointValuation apv = new LogArrivedPointValuation(0);
         summary = new SimpleAccumulator();
-        mcm = new MonteCarloModel<Double>(new FastGaussianRandomGenerator(), process, 1.0, 100, apv, summary, false);
+        mcm = new MonteCarloModel<Double>(new FastGaussianRandomGenerator(), process, 1.0, 100, apv, summary, true);
     }
 
     public void testMeanAndVariance() throws MathException {
