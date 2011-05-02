@@ -1,6 +1,6 @@
 package cz.paulrz.montecarlo.tests;
 
-import cz.paulrz.montecarlo.FastGaussianRandomGenerator;
+import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
 import junit.framework.TestCase;
 import org.apache.commons.math.random.GaussianRandomGenerator;
 import org.apache.commons.math.random.MersenneTwister;
