@@ -49,7 +49,7 @@ public abstract class StochasticProcess implements GenericProcess {
      * @param x Position
      * @return diffusion
      */
-    public abstract DoubleMatrix1D diffusion(double t, DoubleMatrix1D x);
+    public abstract DoubleMatrix2D diffusion(double t, DoubleMatrix1D x);
 
     /**
      * Returns position after time interval dt

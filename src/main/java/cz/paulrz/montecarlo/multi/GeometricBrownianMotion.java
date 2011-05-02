@@ -42,12 +42,11 @@ public final class GeometricBrownianMotion extends StochasticProcess {
     }
 
     @Override
-    public DoubleMatrix1D diffusion(double t, DoubleMatrix1D x) {
-        final DoubleMatrix1D result = DoubleFactory1D.dense.make(dim, 0.0);
+    public DoubleMatrix2D diffusion(double t, DoubleMatrix1D x) {
+        final DoubleMatrix2D result = DoubleFactory2D.dense.make(dim, dim, 0.0);
+        final DoubleMatrix2D xs     = DoubleFactory2D.dense.diagonal(x);
 
-        MatrixHelper.blas.dgemv(false, 1.0, sigma, x, 0.0, result);
-
-        return result;
+        return sigma.zMult(xs, result);
     }
 
     public DoubleMatrix1D getInitialVector() {
