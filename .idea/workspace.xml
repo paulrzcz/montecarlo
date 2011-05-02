@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/EulerDiscretization.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/EulerDiscretization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/GeometricBrownianMotion.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/GeometricBrownianMotion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,7 +121,7 @@
       <file leaf-file-name="HestonProcess.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="65" selection-start="2783" selection-end="2783" vertical-scroll-proportion="3.5851648">
+            <state line="27" column="16" selection-start="826" selection-end="826" vertical-scroll-proportion="0.5467033">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -375,6 +372,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paulrz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -688,7 +719,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Multipath version is added. Massive refactoring is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heston process is added. Few refactorings of stochastic process" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -709,6 +740,7 @@
     <MESSAGE value="Fast generator is added. 5x faster that apache commons" />
     <MESSAGE value="Antithetic method is implemented" />
     <MESSAGE value="Multipath version is added. Massive refactoring is done" />
+    <MESSAGE value="Heston process is added. Few refactorings of stochastic process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -839,7 +871,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="65" selection-start="2783" selection-end="2783" vertical-scroll-proportion="3.5851648">
+        <state line="27" column="16" selection-start="826" selection-end="826" vertical-scroll-proportion="0.5467033">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

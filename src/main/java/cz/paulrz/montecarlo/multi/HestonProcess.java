@@ -21,10 +21,11 @@ public final class HestonProcess extends StochasticProcess {
     private final double rho;
     private final double sqrhov;
 
-    public HestonProcess(double riskFreeRate, DoubleMatrix1D x0, double v0, double kappa,
+    public HestonProcess(double riskFreeRate, double s0, double v0, double kappa,
                          double theta, double sigma, double rho)
     {
-        super(x0, new EulerDiscretization());
+        super(DoubleFactory1D.dense.make(new double[] {s0, v0}),
+                new EulerDiscretization());
         this.riskFreeRate = riskFreeRate;
         this.v0 = v0;
         this.kappa = kappa;
