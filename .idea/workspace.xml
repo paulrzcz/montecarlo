@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabrProcess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,10 +101,19 @@
       <file leaf-file-name="McTests2D.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="114" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
+            <state line="45" column="41" selection-start="1882" selection-end="1882" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatrixHelper.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MatrixHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="8" selection-start="334" selection-end="334" vertical-scroll-proportion="0.55919397">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,10 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SabrProcess.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SabrProcess.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabrProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="-0.15384616">
+            <state line="28" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,17 +178,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Discretization.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/Discretization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="17" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -192,7 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/PathGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MonteCarloModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/PathValuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SimplePathGenerator.java" />
@@ -204,10 +199,11 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/Discretization.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/EulerDiscretization.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/GeometricBrownianMotion.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/HestonProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabrProcess.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MatrixHelper.java" />
       </list>
     </option>
   </component>
@@ -266,24 +262,6 @@
               <option name="myItemId" value="montecarlo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: colt:colt:1.2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -292,58 +270,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="montecarlo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paulrz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -616,7 +542,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="22" width="1280" height="774" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -657,7 +583,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heston addition of strictly positiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sabr process is added" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -681,6 +607,7 @@
     <MESSAGE value="Heston process is added. Few refactorings of stochastic process" />
     <MESSAGE value="Heston bug-fix" />
     <MESSAGE value="Heston addition of strictly positiveness" />
+    <MESSAGE value="Sabr process is added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -690,13 +617,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/FastGaussianRandomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/LogArrivedPointValuation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="33" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0">
@@ -784,15 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="114" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="42" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
@@ -811,10 +722,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabrProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="-0.15384616">
+        <state line="28" column="18" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="41" selection-start="1882" selection-end="1882" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MatrixHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="8" selection-start="334" selection-end="334" vertical-scroll-proportion="0.55919397">
+          <folding />
         </state>
       </provider>
     </entry>

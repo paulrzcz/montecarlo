@@ -42,11 +42,14 @@ public class McTests2D extends TestCase {
     }
 
     public void testMeanAndVariance() throws MathException {
-        int iters = mcm.addSamples(1000, 1e-5, 100);
+        long time = System.currentTimeMillis();
+        int iters = mcm.addSamples(100000);
+        time = System.currentTimeMillis() - time;
         double mean = summary.stats.getMean();
         double stddev = summary.stats.getStandardDeviation();
 
         System.out.println(iters);
+        System.out.println(time*1000.0/iters + " ms/1000");
         assertEquals(expectedMean, mean, 0.01);
         assertEquals(expectedStdDev, stddev, 0.05);
     }
