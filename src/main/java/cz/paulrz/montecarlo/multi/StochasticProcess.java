@@ -10,8 +10,8 @@ import cern.jet.math.Functions;
  * Time: 10:20 AM
  */
 public abstract class StochasticProcess implements GenericProcess {
-    protected Discretization discretization;
-    protected final DoubleMatrix1D x0;
+    protected final Discretization discretization;
+    protected DoubleMatrix1D x0;
 
     /**
      * Stochastic process constructor
@@ -31,6 +31,10 @@ public abstract class StochasticProcess implements GenericProcess {
      */
     public DoubleMatrix1D getInitialVector() {
         return x0;
+    }
+
+    public void setInitialVector(DoubleMatrix1D x) {
+        x0 = x;
     }
 
     /**

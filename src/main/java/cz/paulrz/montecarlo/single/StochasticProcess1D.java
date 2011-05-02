@@ -23,8 +23,8 @@ import org.apache.commons.math.FunctionEvaluationException;
  * 
  */
 public abstract class StochasticProcess1D implements GenericProcess1D {
-    protected Discretization discretization;
-    protected final double x0;
+    protected final Discretization discretization;
+    protected double x0;
 
     /**
      * Stochastic process constructor
@@ -44,6 +44,10 @@ public abstract class StochasticProcess1D implements GenericProcess1D {
      */
     public double getInitialX() {
         return x0;
+    }
+
+    public void setInitialX(double x) {
+        x0 = x;
     }
 
     /**
