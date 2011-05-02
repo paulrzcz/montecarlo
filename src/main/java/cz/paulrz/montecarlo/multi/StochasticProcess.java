@@ -29,7 +29,7 @@ public abstract class StochasticProcess implements GenericProcess {
      *
      * @return
      */
-    public DoubleMatrix1D getInitialX() {
+    public DoubleMatrix1D getInitialVector() {
         return x0;
     }
 
