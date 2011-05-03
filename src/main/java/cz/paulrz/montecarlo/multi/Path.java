@@ -60,4 +60,8 @@ public final class Path {
     public DoubleMatrix1D getValues(int i) {
         return _path.viewColumn(i);
     }
+
+    public double[] getRow(int i) {
+        return _path.viewRow(i).toArray();
+    }
 }
