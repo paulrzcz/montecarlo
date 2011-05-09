@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/BrownianBridge.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/BrownianBridge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/AntitheticPathGenerator1D.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/AntitheticPathGenerator1D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/MonteCarloModel.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/MonteCarloModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SimplePathGenerator1D.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SimplePathGenerator1D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SingleMcFactory.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SingleMcFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SobolPathGenerator1D.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SobolPathGenerator1D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,31 +91,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PathGenerator1D.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/PathGenerator1D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimplePathGenerator1D.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SimplePathGenerator1D.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="8" selection-start="1993" selection-end="2055" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BridgePathGenerator1D.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/BridgePathGenerator1D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="15" selection-start="1353" selection-end="1523" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,10 +129,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="McTests.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="McTests.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="35" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.6221663">
+            <state line="42" column="35" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SobolPathGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SobolPathGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimplePathGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SimplePathGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="19" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="14" selection-start="328" selection-end="328" vertical-scroll-proportion="0.24725275">
               <folding />
             </state>
           </provider>
@@ -182,15 +183,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FastGaussianRandomGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/FastGaussianRandomGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="19" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -201,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MatrixHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/StochasticProcess1D.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/StochasticProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/ProbabilityAccumulator.java" />
@@ -217,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SingleMcFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/BrownianBridge.java" />
         <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -666,7 +658,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BrownianBridge implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="1D Path construction is improved by brownian bridge" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -696,6 +688,7 @@
     <MESSAGE value="Probability accumulators" />
     <MESSAGE value="Sab as reduced Sabr process" />
     <MESSAGE value="BrownianBridge implementation" />
+    <MESSAGE value="1D Path construction is improved by brownian bridge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -705,21 +698,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MaxMinCloseValuation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="16" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="42" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/PathGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/EulerDiscretization.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="48" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" />
@@ -808,7 +786,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="35" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.6221663">
+        <state line="42" column="35" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SobolPathGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SimplePathGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="19" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="328" selection-end="328" vertical-scroll-proportion="0.24725275">
           <folding />
         </state>
       </provider>
