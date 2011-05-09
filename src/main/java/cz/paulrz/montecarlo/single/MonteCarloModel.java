@@ -44,14 +44,15 @@ public final class MonteCarloModel<TValue> {
     public MonteCarloModel(NormalizedRandomGenerator random,
             GenericProcess1D process, double duration, int timeSteps,
             PathValuation<TValue> valuation, Accumulator<TValue> statistics,
-            boolean useAntithetic) {
+            boolean useAntithetic, boolean useBridge) {
         this.summary = statistics;
         this.useAntithetic = useAntithetic;
         if (useAntithetic)
-            this.pathGenerator = new AntitheticPathGenerator1D(process, timeSteps, duration, random);
+            this.pathGenerator = new AntitheticPathGenerator1D(process, timeSteps,
+                    duration, random, useBridge);
         else
             this.pathGenerator = new SimplePathGenerator1D(process, timeSteps, duration,
-                    random);
+                    random, useBridge);
         this.pathValuation = valuation;
     }
 
@@ -66,9 +67,10 @@ public final class MonteCarloModel<TValue> {
      * @param statistics Statistics summary
      */
     public MonteCarloModel(GenericProcess1D process, double duration, int timeSteps,
-                           PathValuation<TValue> valuation, Accumulator<TValue> statistics) throws Exception {
+                           PathValuation<TValue> valuation, Accumulator<TValue> statistics,
+                           boolean useBridge) throws Exception {
         this.summary = statistics;
-        this.pathGenerator = new SobolPathGenerator1D(process, timeSteps, duration);
+        this.pathGenerator = new SobolPathGenerator1D(process, timeSteps, duration, useBridge);
         this.pathValuation = valuation;
         this.useAntithetic = false;
     }

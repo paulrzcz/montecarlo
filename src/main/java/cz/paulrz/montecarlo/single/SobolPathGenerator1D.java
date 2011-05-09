@@ -1,5 +1,6 @@
 package cz.paulrz.montecarlo.single;
 
+import cz.paulrz.montecarlo.random.BrownianBridge;
 import cz.paulrz.montecarlo.random.InverseCumulativeNormal;
 import cz.paulrz.montecarlo.random.Sobol;
 import org.apache.commons.math.MathException;
@@ -14,13 +15,15 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
     private final int timeSteps;
     private final double dt;
     private final Sobol generator;
+    private final BrownianBridge bridge;
 
     public SobolPathGenerator1D(GenericProcess1D process, int timeSteps,
-                                double duration) throws Exception {
+                                double duration, boolean useBridge) throws Exception {
         this.process = process;
         this.timeSteps = timeSteps;
         this.generator = new Sobol(timeSteps-1); // first point is known
         this.dt = duration / timeSteps;
+        bridge = useBridge ? new BrownianBridge(timeSteps, dt) : null;
     }
 
     /**
@@ -44,14 +47,22 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
         Path path = new Path(timeSteps, dt);
         path.addValue(process.getInitialX());
 
-        double t = 0.0;
-        for(int i=1; i<timeSteps; ++i){
+        double[] dw = new double[timeSteps];
+        dw[0] = 0.0;
+        for(int i=1; i<timeSteps; ++i) {
             final double value = uniform[i-1];
             if (value >=1.0 || value<=0.0)
                 return null;
 
-            final double dw = InverseCumulativeNormal.op(value);
-            path.addValue(process.evolve(t, path.getValues()[i - 1], dt, dw));
+            dw[i] = InverseCumulativeNormal.op(value);
+        }
+
+        if (bridge!=null)
+            dw = bridge.transform(dw);
+
+        double t = 0.0;
+        for(int i=1; i<timeSteps; ++i){
+            path.addValue(process.evolve(t, path.getValues()[i - 1], dt, dw[i]));
             t += dt;
         }
         return path;

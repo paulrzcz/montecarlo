@@ -51,11 +51,11 @@ public final class BrownianBridge {
         leftWeight_[0] = rightWeight_[0] = 0.0;
         for (int j = 0, i = 1; i < size_; ++i) {
             // Find the next unpopulated entry in the map.
-            while (map[j] == 0)
+            while (map[j] != 0)
                 ++j;
             int k = j;
             // Find the next populated entry in the map from there.
-            while (map[k] != 0)
+            while (map[k] == 0)
                 ++k;
             // l-1 is now the index of the point to be constructed next.
             int l = j + ((k - 1 - j) >> 1);
