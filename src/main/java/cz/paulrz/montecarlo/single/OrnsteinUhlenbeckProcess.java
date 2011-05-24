@@ -55,4 +55,9 @@ public class OrnsteinUhlenbeckProcess extends StochasticProcess1D {
     public double diffusion(double t, double x) {
         return sigma;
     }
+
+    @Override
+    public String toString() {
+        return "OUP : x0 = "+x0+"; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
+    }
 }
