@@ -16,17 +16,20 @@
  */
 package cz.paulrz.montecarlo.single;
 
+import org.apache.commons.math.util.FastMath;
+
 /**
  * This class represents <a
  * href="http://en.wikipedia.org/wiki/Ornstein�Uhlenbeck_process"
  * >Ornstein-Uhlenbeck process</a>, also known as the mean-reverting process.
  * 
  */
-public class LogOrnsteinUhlenbeckProcess extends StochasticProcess1D {
+public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
 
     private final double theta;
     private final double mu;
     private final double sigma;
+    private final double halfsigmasquare;
 
     /**
      * Constructor of the process
@@ -36,18 +39,19 @@ public class LogOrnsteinUhlenbeckProcess extends StochasticProcess1D {
      * @param mu Mu parameter
      * @param sigma Sigma parameter
      */
-    public LogOrnsteinUhlenbeckProcess(double x0, double theta, double mu,
+    public ExpOrnsteinUhlenbeckProcess(double x0, double theta, double mu,
             double sigma) {
         super(x0, new EulerDiscretization());
         this.theta = theta;
         this.mu = mu;
         this.sigma = sigma;
+        halfsigmasquare = 0.5*sigma*sigma;
     }
 
     /** {@inheritDoc} */
     @Override
     public double drift(double t, double x) {
-        return theta * (mu - x);
+        return (theta * (mu - FastMath.log(x)) + halfsigmasquare) * x;
     }
 
     /** {@inheritDoc} */
@@ -58,6 +62,6 @@ public class LogOrnsteinUhlenbeckProcess extends StochasticProcess1D {
 
     @Override
     public String toString() {
-        return "LOUP : x0 = "+x0+"; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
+        return "OUP : x0 = "+x0+"; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
     }
 }
