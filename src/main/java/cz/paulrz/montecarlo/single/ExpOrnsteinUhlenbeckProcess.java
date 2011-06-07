@@ -48,6 +48,18 @@ public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
         halfsigmasquare = 0.5*sigma*sigma;
     }
 
+    public double getTheta() {
+        return theta;
+    }
+
+    public double getMu() {
+        return mu;
+    }
+
+    public double getSigma() {
+        return sigma;
+    }
+
     /** {@inheritDoc} */
     @Override
     public double drift(double t, double x) {

@@ -44,6 +44,18 @@ public class OrnsteinUhlenbeckProcess extends StochasticProcess1D {
         this.sigma = sigma;
     }
 
+    public double getTheta() {
+        return theta;
+    }
+
+    public double getMu() {
+        return mu;
+    }
+
+    public double getSigma() {
+        return sigma;
+    }
+
     /** {@inheritDoc} */
     @Override
     public double drift(double t, double x) {
