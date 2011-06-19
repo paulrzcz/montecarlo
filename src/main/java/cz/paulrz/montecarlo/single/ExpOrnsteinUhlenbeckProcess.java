@@ -30,6 +30,7 @@ public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
     private final double mu;
     private final double sigma;
     private final double halfsigmasquare;
+    private final double expMu;
 
     /**
      * Constructor of the process
@@ -44,6 +45,7 @@ public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
         super(x0, new EulerDiscretization());
         this.theta = theta;
         this.mu = mu;
+        expMu = FastMath.exp(mu);
         this.sigma = sigma;
         halfsigmasquare = 0.5*sigma*sigma;
     }
@@ -74,6 +76,6 @@ public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
 
     @Override
     public String toString() {
-        return "OUP : x0 = "+x0+"; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
+        return "OUP : x0 = "+x0+"; expMu = "+ expMu + "; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
     }
 }

@@ -40,6 +40,14 @@ public final class GeometricBrownianMotionProcess extends StochasticProcess1D {
         this.sigma = sigma;
     }
 
+    public double getMu() {
+        return mu;
+    }
+
+    public double getSigma() {
+        return sigma;
+    }
+
     /** {@inheritDoc} */
     @Override
     public double drift(double t, double x) {
