@@ -23,8 +23,6 @@
 package cz.paulrz.montecarlo.random;
 
 
-import org.apache.commons.math.MathException;
-
 /**
  * The inverse normal cumulative distribution is a non-linear function for which
  * no closed-form solution exists. The function is continuous, monotonically increasing,
@@ -37,8 +35,6 @@ import org.apache.commons.math.MathException;
  */
 
 public final class InverseCumulativeNormal {
-
-    static final private String SIGMA_MUST_BE_POSITIVE = "sigma must be greater than 0.0";
 
     //
     // static final private fields
@@ -80,73 +76,60 @@ public final class InverseCumulativeNormal {
     // public constructors
     //
 
-    public InverseCumulativeNormal() {
+    private InverseCumulativeNormal() {
 
     }
 
     public final static double QL_EPSILON           =   Math.ulp(1.0);
+    private final static double Tolerance           = 42*QL_EPSILON;
 
-    //
-    // implements UnaryFunction
-    //
-
-    /**
-     * Computes the inverse cumulative normal distribution.
-     * @param x
-     * @returns <code>average + z * sigma</code>
-     */
-    public static double op(double x)/* @ReadOnly */{
-        double z;
-        double r;
-
-        if (x < 0.0 || x > 1.0) {
-            // try to recover if due to numerical error
-            if (isCloseEnough(x, 1.0)) {
-                x = 1.0;
-            } else if (Math.abs(x) < QL_EPSILON) {
-                x = 0.0;
-            } else
-                return Double.NaN;
-        }
+    public static double op(final double x)/* @ReadOnly */{
 
         if (x < xlow) {
             // Rational approximation for the lower region 0<x<u_low
-            z = Math.sqrt(-2.0 * Math.log(x));
-            z = (((((c1*z+c2)*z+c3)*z+c4)*z+c5)*z+c6) / ((((d1*z+d2)*z+d3)*z+d4)*z+1.0);
+            final double z = Math.sqrt(-2.0 * Math.log(x));
+            return (((((c1*z+c2)*z+c3)*z+c4)*z+c5)*z+c6) / ((((d1*z+d2)*z+d3)*z+d4)*z+1.0);
         } else if (x <= xhigh) {
             // Rational approximation for the central region u_low<=x<=u_high
-            z = x-0.5;
-            r = z*z;
-            z = (((((a1*r+a2)*r+a3)*r+a4)*r+a5)*r+a6)*z / (((((b1*r+b2)*r+b3)*r+b4)*r+b5)*r+1.0);
+            final double z = x-0.5;
+            final double r = z*z;
+            return (((((a1*r+a2)*r+a3)*r+a4)*r+a5)*r+a6)*z / (((((b1*r+b2)*r+b3)*r+b4)*r+b5)*r+1.0);
         } else {
             // Rational approximation for the upper region u_high<x<1
-            z = Math.sqrt(-2.0 * Math.log(1.0 - x));
-            z = -(((((c1*z+c2)*z+c3)*z+c4)*z+c5)*z+c6) / ((((d1*z+d2)*z+d3)*z+d4)*z+1.0);
+            final double z = Math.sqrt(-2.0 * Math.log(1.0 - x));
+            return -(((((c1*z+c2)*z+c3)*z+c4)*z+c5)*z+c6) / ((((d1*z+d2)*z+d3)*z+d4)*z+1.0);
         }
 
-        return z;
+        // return z;
     }
 
-    static public final boolean isClose(final double x, final double y) {
+    static public boolean isClose(final double x, final double y) {
         return isClose(x, y, 42);
     }
 
-    static public final boolean isClose(final double x, final double y, final int n) {
-    final double diff = Math.abs(x-y);
-    final double tolerance = n * QL_EPSILON;
-    return diff <= tolerance*Math.abs(x) &&
+    static public boolean isClose(final double x, final double y, final int n) {
+        final double diff = Math.abs(x-y);
+        final double tolerance = n * QL_EPSILON;
+        return diff <= tolerance*Math.abs(x) &&
            diff <= tolerance*Math.abs(y);
     }
 
-    static public final boolean isCloseEnough(final double x, final double y) {
-        return isCloseEnough(x, y, 42);
+    static public boolean isCloseEnough(final double x, final double y) {
+        final double diff = Math.abs(x-y);
+        return diff <= Tolerance*Math.abs(x) ||
+            diff <= Tolerance*Math.abs(y);
     }
 
-    static public final boolean isCloseEnough(final double x, final double y, final int n) {
-    final double diff = Math.abs(x-y);
-    final double tolerance = n * QL_EPSILON;
-    return diff <= tolerance*Math.abs(x) ||
-           diff <= tolerance*Math.abs(y);
+    static public boolean isCloseEnoughToOne(final double x) {
+        final double diff = Math.abs(x-1.0);
+        return diff <= Tolerance || diff <= Tolerance*Math.abs(x);
+    }
+
+    static public boolean isCloseEnough(final double x, final double y, final int n) {
+        final double diff = Math.abs(x-y);
+        final double tolerance = n * QL_EPSILON;
+        return diff <= tolerance*Math.abs(x) ||
+            diff <= tolerance*Math.abs(y);
     }
 
 }

@@ -1,6 +1,5 @@
 package cz.paulrz.montecarlo.random;
 
-import org.apache.commons.math.random.MersenneTwister;
 import org.apache.commons.math.random.NormalizedRandomGenerator;
 
 /**
