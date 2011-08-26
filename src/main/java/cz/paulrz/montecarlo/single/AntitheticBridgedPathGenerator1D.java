@@ -56,9 +56,11 @@ public final class AntitheticBridgedPathGenerator1D implements PathGenerator1D {
         dw = bridge.transform(dw);
 
         double t = 0.0;
+        final double[] pathValues = path.getValues();
+        final double[] nextPathValues = nextPath.getValues();
         for (int i = 1; i < timeSteps; ++i) {
-            path.addValue(process.evolve(t, path.getValues()[i - 1], dt, dw[i]));
-            nextPath.addValue(process.evolve(t, path.getValues()[i - 1], dt, -dw[i]));
+            path.addValue(process.evolve(t, pathValues[i - 1], dt, dw[i]));
+            nextPath.addValue(process.evolve(t, nextPathValues[i - 1], dt, -dw[i]));
             t += dt;
         }
 

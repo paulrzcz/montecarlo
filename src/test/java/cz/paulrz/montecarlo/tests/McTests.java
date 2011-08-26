@@ -33,7 +33,7 @@ public class McTests extends TestCase {
         LogArrivedPointValuation apv = new LogArrivedPointValuation();
         summary = new SimpleAccumulator();
         NormalizedRandomGenerator nrg = new FastGaussianRandomGenerator();
-        mcm = new MonteCarloModel<Double>(nrg, process, 1.0, 100, apv, summary, false, true);
+        mcm = new MonteCarloModel<Double>(nrg, process, 1.0, 100, apv, summary, true, false);
     }
 
     public void testMeanAndVariance() throws MathException {

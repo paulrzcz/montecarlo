@@ -48,7 +48,7 @@ public final class AntitheticPathGenerator1D implements PathGenerator1D {
         for (int i = 1; i < timeSteps; ++i) {
             final double dw = generator.nextNormalizedDouble();
             path.addValue(process.evolve(t, path.getValues()[i - 1], dt, dw));
-            nextPath.addValue(process.evolve(t, path.getValues()[i - 1], dt, -dw));
+            nextPath.addValue(process.evolve(t, nextPath.getValues()[i - 1], dt, -dw));
             t += dt;
         }
 

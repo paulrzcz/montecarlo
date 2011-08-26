@@ -40,6 +40,13 @@ public class RngTest extends TestCase {
         measure(fgrg);
     }
 
+    private static final long[] xs = {1, 3, 5, 10, 20, 35, 80, 128};
+
+    public void testHighSetBit() {
+        for(int i=0; i<xs.length; ++i)
+            Assert.assertEquals(i, FastGaussianRandomGenerator.findHighSetPosition(xs[i]));
+    }
+
     public void testConvert() {
         double x = 0.00000005;
         long   c = FastGaussianRandomGenerator.convert(x);
