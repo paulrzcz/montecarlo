@@ -1,6 +1,7 @@
 package cz.paulrz.montecarlo.tests;
 
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
+import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.commons.math.random.NormalizedRandomGenerator;
 
@@ -37,6 +38,21 @@ public class RngTest extends TestCase {
         System.out.println("Fast generator");
         FastGaussianRandomGenerator fgrg = new FastGaussianRandomGenerator();
         measure(fgrg);
+    }
+
+    public void testConvert() {
+        double x = 0.00000005;
+        long   c = FastGaussianRandomGenerator.convert(x);
+        System.out.format("%X%n", c);
+        Assert.assertEquals(x, FastGaussianRandomGenerator.convert(c));
+    }
+
+    public void testConvertLong() {
+        long   x = 0x00342345L;
+        long   xd = (x) | (971L << 51);
+        double dd = x* 0x1.0p-52d;
+        double cd = FastGaussianRandomGenerator.convert(xd);
+        Assert.assertEquals(dd, cd);
     }
 
     /*

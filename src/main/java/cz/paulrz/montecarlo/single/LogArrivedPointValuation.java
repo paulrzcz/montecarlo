@@ -26,7 +26,7 @@ import org.apache.commons.math.util.FastMath;
 public final class LogArrivedPointValuation implements PathValuation<Double> {
 
     /** {@inheritedDoc} */
-    public Double value(final Path path) {
+    public final Double value(final Path path) {
         final double[] values = path.getValues();
         return FastMath.log(values[path.getLength() - 1]
                 / values[0]);

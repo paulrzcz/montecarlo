@@ -47,12 +47,18 @@ public final class MonteCarloModel<TValue> {
             boolean useAntithetic, boolean useBridge) {
         this.summary = statistics;
         this.useAntithetic = useAntithetic;
-        if (useAntithetic)
+
+        if (useAntithetic && useBridge)
+            this.pathGenerator = new AntitheticBridgedPathGenerator1D(process, timeSteps,
+                    duration, random);
+        else if (useAntithetic && !useBridge)
             this.pathGenerator = new AntitheticPathGenerator1D(process, timeSteps,
-                    duration, random, useBridge);
+                    duration, random);
+        else if (!useAntithetic && useBridge)
+            this.pathGenerator = new BridgedPathGenerator1D(process, timeSteps, duration, random);
         else
-            this.pathGenerator = new SimplePathGenerator1D(process, timeSteps, duration,
-                    random, useBridge);
+            this.pathGenerator = new SimplePathGenerator1D(process, timeSteps, duration, random);
+
         this.pathValuation = valuation;
     }
 
@@ -80,7 +86,7 @@ public final class MonteCarloModel<TValue> {
      * 
      * @param samples Number of paths to add
      */
-    public int addSamples(int samples) throws MathException {
+    public int addSamples(final int samples) throws MathException {
         final int allSamples = useAntithetic ? samples*2 : samples;
 
         for (int i = 0; i < allSamples; ++i) {
@@ -91,7 +97,7 @@ public final class MonteCarloModel<TValue> {
         return samples;
     }
 
-    public int addSamples(int minSamples, double eps, int maxSteps) throws MathException {
+    public int addSamples(final int minSamples, double eps, int maxSteps) throws MathException {
         addSamples(minSamples);
         Accumulator<TValue> prev = summary.deepCopy();
         int steps = 1;
