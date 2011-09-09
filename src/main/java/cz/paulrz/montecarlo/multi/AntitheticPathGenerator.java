@@ -62,13 +62,13 @@ public final class AntitheticPathGenerator implements PathGenerator {
     private DoubleMatrix1D[] generate()
     {
         final double[] result = new double[dim];
-        final double[] anitresult = new double[dim];
+        final double[] antiresult = new double[dim];
         for(int i=0; i< dim; ++i)
         {
             result[i] = generator.nextNormalizedDouble();
-            anitresult[i] = - result[i];
+            antiresult[i] = - result[i];
         }
         return new DoubleMatrix1D[] {
-                DoubleFactory1D.dense.make(result), DoubleFactory1D.dense.make(anitresult) };
+                DoubleFactory1D.dense.make(result), DoubleFactory1D.dense.make(antiresult) };
     }
 }
