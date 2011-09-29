@@ -2,6 +2,7 @@ package cz.paulrz.montecarlo.tests;
 
 import cz.paulrz.montecarlo.accumulator.SimpleAccumulator;
 import cz.paulrz.montecarlo.single.ArrivedPointValuation;
+import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import cz.paulrz.montecarlo.single.LogOrnsteinUhlenbeckProcess;
 import cz.paulrz.montecarlo.single.MonteCarloModel;
 import junit.framework.TestCase;
@@ -14,7 +15,7 @@ import org.apache.commons.math.MathException;
  */
 public class LogOuTest extends TestCase {
     private LogOrnsteinUhlenbeckProcess process;
-    private MonteCarloModel mcm;
+    private IMonteCarloModel mcm;
     private SimpleAccumulator summary;
 
     // as GBM is a log-normal process, Logs of arrival points work better

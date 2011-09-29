@@ -1,9 +1,8 @@
 package cz.paulrz.montecarlo.tests;
 
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
-import cz.paulrz.montecarlo.single.GeometricBrownianMotionProcess;
-import cz.paulrz.montecarlo.single.LogArrivedPointValuation;
-import cz.paulrz.montecarlo.single.MonteCarloModel;
+import cz.paulrz.montecarlo.random.FastRandomFactory;
+import cz.paulrz.montecarlo.single.*;
 import cz.paulrz.montecarlo.accumulator.SimpleAccumulator;
 import junit.framework.TestCase;
 import org.apache.commons.math.MathException;
@@ -16,7 +15,7 @@ import org.apache.commons.math.random.NormalizedRandomGenerator;
  */
 public class McTests extends TestCase {
     private GeometricBrownianMotionProcess process;
-    private MonteCarloModel mcm;
+    private IMonteCarloModel mcm;
     private SimpleAccumulator summary;
 
     // as GBM is a log-normal process, Logs of arrival points work better
@@ -52,6 +51,28 @@ public class McTests extends TestCase {
         System.out.println(stddev);
         assertEquals(expectedMean, mean, 0.01);
         // assertEquals(expectedStdDev, stddev, 0.05);
+    }
+
+    public void testMeanAndVarianceParallel() throws MathException {
+        LogArrivedPointValuation apv = new LogArrivedPointValuation();
+        mcm = new ParallelMonteCarloModel<Double>(new FastRandomFactory(),
+                process, 1.0, 100, apv, summary, true, false);
+
+        long ms = System.currentTimeMillis();
+        int iters = mcm.addSamples(500000);
+        ms = System.currentTimeMillis() - ms;
+        System.out.println(ms+" ms");
+        double rate = iters*1000.0/ms;
+        System.out.format("%f iters/s %n", rate);
+
+        double mean = summary.stats.getMean();
+        double stddev = summary.stats.getStandardDeviation();
+
+        System.out.println(iters);
+        System.out.println(mean);
+        System.out.println(stddev);
+        assertEquals(expectedMean, mean, 0.01);
+        assertEquals(expectedStdDev, stddev, 0.02);
     }
 
 }

@@ -25,7 +25,7 @@ import org.apache.commons.math.random.NormalizedRandomGenerator;
  * evaluate them and collect statistics.
  * 
  */
-public final class MonteCarloModel<TValue> {
+public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
     private final Accumulator<TValue> summary;
     private final PathGenerator1D pathGenerator;
     private final PathValuation<TValue> pathValuation;
@@ -81,11 +81,6 @@ public final class MonteCarloModel<TValue> {
         this.useAntithetic = false;
     }
 
-    /**
-     * Adds path samples to statistics
-     * 
-     * @param samples Number of paths to add
-     */
     public int addSamples(final int samples) throws MathException {
         final int allSamples = useAntithetic ? samples*2 : samples;
 
@@ -112,11 +107,6 @@ public final class MonteCarloModel<TValue> {
         return steps*minSamples;
     }
 
-    /**
-     * Gets statistics summary
-     * 
-     * @return Statistics summary
-     */
     public Accumulator<TValue> getStats() {
         return summary;
     }
