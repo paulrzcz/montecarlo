@@ -1,6 +1,7 @@
 package cz.paulrz.montecarlo.multi;
 
 import cz.paulrz.montecarlo.accumulator.Accumulator;
+import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.random.NormalizedRandomGenerator;
 
@@ -9,7 +10,7 @@ import org.apache.commons.math.random.NormalizedRandomGenerator;
  * Date: 2/5/11
  * Time: 12:43 PM
  */
-public class MonteCarloModel<TValue> {
+public class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
     private final Accumulator<TValue> summary;
     private final PathGenerator pathGenerator;
     private final PathValuation<TValue> pathValuation;

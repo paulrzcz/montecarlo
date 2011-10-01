@@ -51,7 +51,10 @@ public class ProbabilityAccumulator implements Accumulator<Double> {
             hits++;
     }
 
-
+    @Override
+    public String toString() {
+        return "Hits="+hits+"; Total="+total;
+    }
 
     public double norm(Accumulator<Double> other) {
         ProbabilityAccumulator pa = (ProbabilityAccumulator)other;
@@ -60,7 +63,7 @@ public class ProbabilityAccumulator implements Accumulator<Double> {
             return this.probability() - pa.probability();
         }
 
-        return 1e8;  //To change body of implemented methods use File | Settings | File Templates.
+        return 1e8;
     }
 
     public Accumulator<Double> deepCopy() {

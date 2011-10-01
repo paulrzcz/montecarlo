@@ -1,44 +1,55 @@
-package cz.paulrz.montecarlo.single;
+package cz.paulrz.montecarlo.multi;
 
 import cz.paulrz.montecarlo.accumulator.Accumulator;
 import cz.paulrz.montecarlo.parallel.CpuPool;
 import cz.paulrz.montecarlo.random.RandomGeneratorFactory;
+import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.random.NormalizedRandomGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * User: paul
- * Date: 29/9/11
- * Time: 08:25 AM
+ * Date: 1/10/11
+ * Time: 17:58 PM
  */
-public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
+public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
     private final Accumulator<TValue> summary;
+    private final RandomGeneratorFactory factory;
     private final PathValuation<TValue> pathValuation;
-    private final RandomGeneratorFactory randomFactory;
     private final boolean useAntithetic;
-    private final boolean useBridge;
-    private final GenericProcess1D process;
+    private final GenericProcess process;
     private final double duration;
     private final int timeSteps;
 
+
+    /**
+     * Constructor of Monte Carlo model
+     *
+     * @param random     Underlying random number generator
+     * @param process    Underlying stochastic process
+     * @param duration   Duration of paths in time units
+     * @param timeSteps  Path discretization time step
+     * @param valuation  Path valuation function
+     * @param statistics Statistics summary
+     */
     public ParallelMonteCarloModel(RandomGeneratorFactory random,
-                                   GenericProcess1D process, double duration, int timeSteps,
+                                   GenericProcess process, double duration, int timeSteps,
                                    PathValuation<TValue> valuation, Accumulator<TValue> statistics,
-                                   boolean useAntithetic, boolean useBridge) {
+                                   boolean useAntithetic) {
+        this.factory = random;
         this.summary = statistics;
         this.useAntithetic = useAntithetic;
-        this.useBridge = useBridge;
-        this.randomFactory = random;
-        this.duration = duration;
-        this.process = process;
-        this.timeSteps = timeSteps;
         this.pathValuation = valuation;
+        this.process = process;
+        this.duration = duration;
+        this.timeSteps = timeSteps;
     }
-
 
     public int addSamples(int samples) throws MathException {
         List<Future<List<TValue>>> executionList = new ArrayList<Future<List<TValue>>>(CpuPool.numOfCpu);
@@ -69,10 +80,10 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
     }
 
     public int addSamples(int minSamples, double eps, int maxSteps) throws MathException {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return 0;
     }
 
-    public Accumulator getStats() {
+    public Accumulator<TValue> getStats() {
         return summary;
     }
 
@@ -84,7 +95,7 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
         }
 
         public List<TValue> call() throws Exception {
-            final PathGenerator1D pathGenerator = createPathGenerator();
+            final PathGenerator pathGenerator = createPathGenerator();
             final int allSamples = useAntithetic ? samples * 2 : samples;
             final List<TValue> result = new ArrayList<TValue>(allSamples);
 
@@ -97,28 +108,20 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
             return result;
         }
 
-        private PathGenerator1D createPathGenerator() {
-            if (randomFactory == null){
+        private PathGenerator createPathGenerator() {
+            if (factory == null) {
                 try {
-                    return new SobolPathGenerator1D(process, timeSteps, duration, useBridge);
+                    return new SobolPathGenerator(process, timeSteps, duration);
                 } catch (Exception e) {
                     // fallback...
                 }
             }
+            final NormalizedRandomGenerator random = factory.newGenerator();
 
-            final NormalizedRandomGenerator random = randomFactory.newGenerator();
-
-            if (useAntithetic && useBridge)
-                return new AntitheticBridgedPathGenerator1D(process, timeSteps,
-                        duration, random);
-            else if (useAntithetic && !useBridge)
-                return new AntitheticPathGenerator1D(process, timeSteps,
-                        duration, random);
-            else if (!useAntithetic && useBridge)
-                return new BridgedPathGenerator1D(process, timeSteps, duration, random);
+            if (useAntithetic)
+                return new AntitheticPathGenerator(process, timeSteps, duration, random);
             else
-                return new SimplePathGenerator1D(process, timeSteps, duration, random);
-
+                return new SimplePathGenerator(process, timeSteps, duration, random);
         }
     }
 }

@@ -19,9 +19,14 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
 
     public SobolPathGenerator1D(GenericProcess1D process, int timeSteps,
                                 double duration, boolean useBridge) throws Exception {
+        this(new Sobol(timeSteps-1), process, timeSteps, duration, useBridge);
+    }
+
+    public SobolPathGenerator1D(Sobol generator, GenericProcess1D process, int timeSteps,
+                                double duration, boolean useBridge) throws Exception {
         this.process = process;
         this.timeSteps = timeSteps;
-        this.generator = new Sobol(timeSteps-1); // first point is known
+        this.generator = generator; // first point is known
         this.dt = duration / timeSteps;
         bridge = useBridge ? new BrownianBridge(timeSteps, dt) : null;
     }

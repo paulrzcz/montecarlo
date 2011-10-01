@@ -16,6 +16,7 @@
  */
 package cz.paulrz.montecarlo.random;
 
+import cz.paulrz.montecarlo.parallel.CpuPool;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.exception.NullArgumentException;
 import org.apache.commons.math.exception.OutOfRangeException;
@@ -81,10 +82,6 @@ import java.util.concurrent.*;
  * @version $Id: ParallelPercentile.java 1136128 2011-06-15 17:29:06Z psteitz $
  */
 public class ParallelPercentile extends AbstractUnivariateStatistic implements Serializable {
-
-    private static final int numOfCpu = Runtime.getRuntime().availableProcessors();
-    private static final ExecutorService executorService = Executors.newFixedThreadPool(numOfCpu);
-
     /** Serializable version identifier */
     private static final long serialVersionUID = -8091216485095130416L;
 
@@ -299,9 +296,9 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
         }
 
         Future<Double> lowerFuture =
-                executorService.submit(new SelectWorker(work, pivotsHeap, intPos - 1));
+                CpuPool.executorService.submit(new SelectWorker(work, pivotsHeap, intPos - 1));
         Future<Double> upperFuture =
-                executorService.submit(new SelectWorker(work, pivotsHeap, intPos));
+                CpuPool.executorService.submit(new SelectWorker(work, pivotsHeap, intPos));
 
         try {
             double lower = lowerFuture.get();
