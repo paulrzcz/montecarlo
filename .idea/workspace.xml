@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/ParallelMonteCarloModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/parallel/CpuPool.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/SobolRsg.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/ProbabilityAccumulator.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/ProbabilityAccumulator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MonteCarloModel.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/MonteCarloModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/ParallelPercentile.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/ParallelPercentile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ParallelMonteCarloModel.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ParallelMonteCarloModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SobolPathGenerator1D.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SobolPathGenerator1D.java" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,33 +77,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProbabilityAccumulator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/ProbabilityAccumulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="13" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SabProcess.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabProcess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="34" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SabrProcess.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/multi/SabrProcess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="19" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="McTests2D.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests2D.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,10 +86,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParallelMonteCarloModel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ParallelMonteCarloModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ParallelMonteCarloModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="50" selection-start="1950" selection-end="1950" vertical-scroll-proportion="-2.3064516">
+            <state line="48" column="50" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrownianBridge.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/BrownianBridge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="19" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sobol.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/Sobol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="243" column="43" selection-start="8108" selection-end="8108" vertical-scroll-proportion="-8.908602">
               <folding />
             </state>
           </provider>
@@ -806,7 +791,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parallel percentile implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multi dimensional parallel monte carlo" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -819,7 +804,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Few changes of exception handling" />
     <MESSAGE value="Fast generator is added. 5x faster that apache commons" />
     <MESSAGE value="Antithetic method is implemented" />
     <MESSAGE value="Multipath version is added. Massive refactoring is done" />
@@ -844,6 +828,7 @@
     <MESSAGE value="Removed MersenneTwister. Code clean-up" />
     <MESSAGE value="ParallelMonteCarlo implemented" />
     <MESSAGE value="Parallel percentile implementation" />
+    <MESSAGE value="Multi dimensional parallel monte carlo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -853,16 +838,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/MedianAccumulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="19" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/McTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="73" selection-start="2275" selection-end="2298" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/PercentileTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="34" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" />
@@ -871,13 +846,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/SobolPathGenerator1D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="78" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/Sobol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="43" selection-start="8108" selection-end="8108" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/accumulator/ProbabilityAccumulator.java">
@@ -956,7 +924,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ParallelMonteCarloModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="50" selection-start="1950" selection-end="1950" vertical-scroll-proportion="-2.3064516">
+        <state line="48" column="50" selection-start="1950" selection-end="1950" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/BrownianBridge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/random/Sobol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="43" selection-start="8108" selection-end="8108" vertical-scroll-proportion="-8.908602">
           <folding />
         </state>
       </provider>
