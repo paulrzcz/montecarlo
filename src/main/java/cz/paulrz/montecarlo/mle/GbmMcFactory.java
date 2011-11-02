@@ -14,11 +14,18 @@ public class GbmMcFactory extends DefaultMcFactory {
         super(duration, timeSteps);
     }
 
+    public double[] getStartConfiguration() {
+        return new double[] {0.1, 0.1};
+    }
+
     public double[] getStartingPoint() {
-        return new double[] {0.0, 0.0 };
+        return new double[] {0.1, 0.1 };
     }
 
     public StochasticProcess1D createProcess(double x0, double[] parameters) {
-        return new GeometricBrownianMotionProcess(x0, parameters[0], parameters[1]);
+        if (parameters[1] < 0)
+            return new GeometricBrownianMotionProcess(0.0, 0.0, 0.0);
+        else
+            return new GeometricBrownianMotionProcess(x0, parameters[0], parameters[1]);
     }
 }

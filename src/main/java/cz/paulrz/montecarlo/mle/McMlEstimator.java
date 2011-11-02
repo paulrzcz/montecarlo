@@ -24,7 +24,8 @@ public class McMlEstimator {
 
     public RealPointValuePair estimate() throws FunctionEvaluationException, OptimizationException {
         NelderMead optimizer = new NelderMead();
-        optimizer.setConvergenceChecker(new SimpleRealPointChecker(-1.0, 0.0001));
+        optimizer.setStartConfiguration(factory.getStartConfiguration());
+        optimizer.setConvergenceChecker(new SimpleRealPointChecker(-0.001, 1e-10));
 
         RealPointValuePair result = optimizer.optimize(function, GoalType.MAXIMIZE, factory.getStartingPoint());
 

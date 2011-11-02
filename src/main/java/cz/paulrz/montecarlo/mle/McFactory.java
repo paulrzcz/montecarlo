@@ -10,6 +10,8 @@ import cz.paulrz.montecarlo.single.StochasticProcess1D;
  */
 public interface McFactory {
 
+    double[] getStartConfiguration();
+
     double[] getStartingPoint();
 
     StochasticProcess1D createProcess(double x0, double[] parameters);

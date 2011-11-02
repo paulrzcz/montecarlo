@@ -16,7 +16,7 @@ final class MlFunction implements MultivariateRealFunction {
 
     private final double[] data;
     private final McFactory factory;
-    private final static int samples = 10000;
+    private final static int samples = 50000;
 
     public MlFunction(double[] data, McFactory factory) {
         this.data = data;
@@ -28,6 +28,8 @@ final class MlFunction implements MultivariateRealFunction {
         for(int i=1; i < data.length; ++i) {
             sum += onePoint(data[i-1], data[i], point);
         }
+
+        System.out.printf("Mu = %.05f; Sigma = %.05f; Sum = %f\n", point[0], point[1], sum);
 
         return sum;
     }
