@@ -6,9 +6,7 @@ import cz.paulrz.montecarlo.random.Sobol;
 import org.apache.commons.math.MathException;
 
 /**
- * User: paul
- * Date: 20/4/11
- * Time: 13:20 PM
+ * Path generator that uses a low-discrepancy Sobol generator
  */
 public final class SobolPathGenerator1D implements PathGenerator1D {
     private final GenericProcess1D process;
@@ -17,11 +15,28 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
     private final Sobol generator;
     private final BrownianBridge bridge;
 
+    /**
+     * Sobol path generator constructor
+     * @param process Stochastic process to use
+     * @param timeSteps Number of time steps
+     * @param duration Whole duration of path
+     * @param useBridge If true, use Brownian bridge to construct the path
+     * @throws Exception
+     */
     public SobolPathGenerator1D(GenericProcess1D process, int timeSteps,
                                 double duration, boolean useBridge) throws Exception {
         this(new Sobol(timeSteps-1), process, timeSteps, duration, useBridge);
     }
 
+    /**
+     * Sobol path generator constructor
+     * @param generator Sobol random number generator
+     * @param process Stochastic process to use
+     * @param timeSteps Number of time steps
+     * @param duration Whole duration of path
+     * @param useBridge If true, use Brownian bridge to construct the path
+     * @throws Exception
+     */
     public SobolPathGenerator1D(Sobol generator, GenericProcess1D process, int timeSteps,
                                 double duration, boolean useBridge) throws Exception {
         this.process = process;

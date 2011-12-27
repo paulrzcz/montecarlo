@@ -1,9 +1,9 @@
 package cz.paulrz.montecarlo.multi;
 
 /**
- * User: paul
- * Date: 26/4/11
- * Time: 10:17 AM
+ * This interface represents a mapping from path to real value of the path. It
+ * is called from the Monte Carlo engine to include path value into statistics
+ * summary
  */
 public interface PathValuation<T> {
     /**

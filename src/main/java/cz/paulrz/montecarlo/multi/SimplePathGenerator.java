@@ -6,9 +6,7 @@ import org.apache.commons.math.FunctionEvaluationException;
 import org.apache.commons.math.random.NormalizedRandomGenerator;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 11:00 AM
+ * Ordinary path generator. Suitable in the most of scenarios.
  */
 public final class SimplePathGenerator implements PathGenerator {
     private final GenericProcess process;
@@ -34,6 +32,11 @@ public final class SimplePathGenerator implements PathGenerator {
         this.dt = duration / timeSteps;
     }
 
+    /**
+     * Generates a new path
+     *
+     * @return Path for the stochastic process
+     */
     public Path next() throws FunctionEvaluationException {
         final Path path = new Path(processDimension, timeSteps, dt);
         path.addValue(process.getInitialVector());

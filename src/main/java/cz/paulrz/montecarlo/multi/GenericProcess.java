@@ -3,9 +3,8 @@ package cz.paulrz.montecarlo.multi;
 import cern.colt.matrix.DoubleMatrix1D;
 
 /**
- * User: paul
- * Date: 26/4/11
- * Time: 09:55 AM
+ * Generic stochastic process X(t)
+ *
  */
 public interface GenericProcess {
 

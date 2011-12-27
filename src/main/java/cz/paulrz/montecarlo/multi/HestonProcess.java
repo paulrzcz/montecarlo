@@ -7,14 +7,12 @@ import cern.colt.matrix.DoubleMatrix2D;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 15:22 PM
+ *      Heston process
  *
  *      dS(t, S)  &=& \mu S dt + \sqrt{v} S dW_1 \\
-        dv(t, S)  &=& \kappa (\theta - v) dt + \sigma \sqrt{v} dW_2 \\
-        dW_1 dW_2 &=& \rho dt
-
+ *      dv(t, S)  &=& \kappa (\theta - v) dt + \sigma \sqrt{v} dW_2 \\
+ *      dW_1 dW_2 &=& \rho dt
+ *
  */
 public final class HestonProcess extends StochasticProcess {
 

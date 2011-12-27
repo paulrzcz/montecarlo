@@ -19,7 +19,7 @@ public final class AntitheticPathGenerator implements PathGenerator {
     private Path nextPath = null;
 
     /**
-     * Constructor of SimplePathGenerator1D
+     * Constructor of AntitheticPathGenerator
      *
      * @param process Stochastic Process
      * @param timeSteps Number of time steps

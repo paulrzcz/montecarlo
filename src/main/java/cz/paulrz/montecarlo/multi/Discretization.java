@@ -4,9 +4,8 @@ import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.DoubleMatrix2D;
 
 /**
- * User: paul
- * Date: 26/4/11
- * Time: 10:19 AM
+ * Discretization of a stochastic process over given time interval
+ *
  */
 public interface Discretization {
     /**

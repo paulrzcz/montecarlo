@@ -3,9 +3,7 @@ package cz.paulrz.montecarlo.single;
 import org.apache.commons.math.MathException;
 
 /**
- * User: paul
- * Date: 20/4/11
- * Time: 13:18 PM
+ * Generates a random path following the stochastic process
  */
 public interface PathGenerator1D {
     /**

@@ -6,9 +6,10 @@ import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.DoubleMatrix2D;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 13:25 PM
+ * This class represent multidimensional <a
+ * href="http://en.wikipedia.org/wiki/Geometric_Brownian_motion">Geometric
+ * Brownian Motion</a> with constant drift and diffusion.
+ *
  */
 public final class GeometricBrownianMotion extends StochasticProcess {
 

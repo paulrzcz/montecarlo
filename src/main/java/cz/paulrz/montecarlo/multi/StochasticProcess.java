@@ -5,9 +5,8 @@ import cern.colt.matrix.DoubleMatrix2D;
 import cern.jet.math.Functions;
 
 /**
- * User: paul
- * Date: 26/4/11
- * Time: 10:20 AM
+ * Base class of stochastic processes
+ *
  */
 public abstract class StochasticProcess implements GenericProcess {
     protected final Discretization discretization;

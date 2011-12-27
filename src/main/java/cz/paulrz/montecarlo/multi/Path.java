@@ -6,9 +6,9 @@ import cern.colt.matrix.DoubleMatrix2D;
 import org.apache.commons.math.exception.OutOfRangeException;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 12:24 PM
+ * Path is a sample of stochastic process's path discretized with uniform time
+ * step. It is simply a set of points {\vec{x},t}
+ *
  */
 public final class Path {
 

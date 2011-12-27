@@ -4,9 +4,8 @@ import cz.paulrz.montecarlo.accumulator.Accumulator;
 import org.apache.commons.math.MathException;
 
 /**
- * User: paul
- * Date: 29/9/11
- * Time: 08:34 AM
+ * This is an interface of Monte Carlo model.
+ *
  */
 public interface IMonteCarloModel<TValue> {
     /**
@@ -16,6 +15,16 @@ public interface IMonteCarloModel<TValue> {
      */
     int addSamples(int samples) throws MathException;
 
+    /**
+     * Adds path sample to statistics until either statistics converges
+     * or max steps are reached
+     *
+     * @param minSamples
+     * @param eps
+     * @param maxSteps
+     * @return
+     * @throws MathException
+     */
     int addSamples(int minSamples, double eps, int maxSteps) throws MathException;
 
     /**

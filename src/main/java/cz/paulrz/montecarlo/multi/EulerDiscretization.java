@@ -6,9 +6,8 @@ import cern.colt.matrix.DoubleMatrix2D;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 10:51 AM
+ * Euler equally spaced discretization
+ *
  */
 public final class EulerDiscretization implements Discretization {
     public DoubleMatrix1D drift(StochasticProcess process, double t, DoubleMatrix1D x, double dt) {

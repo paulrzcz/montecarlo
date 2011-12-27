@@ -4,9 +4,7 @@ import cz.paulrz.montecarlo.accumulator.Accumulator;
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
 
 /**
- * User: paul
- * Date: 9/5/11
- * Time: 12:29 PM
+ * Factory class for common Monte-Carlo models
  */
 public final class SingleMcFactory {
 

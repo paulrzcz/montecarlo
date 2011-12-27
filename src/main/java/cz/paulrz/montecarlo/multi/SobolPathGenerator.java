@@ -7,9 +7,7 @@ import cz.paulrz.montecarlo.random.Sobol;
 import org.apache.commons.math.MathException;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 12:46 PM
+ * Path generator that uses a low-discrepancy Sobol generator
  */
 public final class SobolPathGenerator implements PathGenerator {
     private final GenericProcess process;
@@ -18,6 +16,13 @@ public final class SobolPathGenerator implements PathGenerator {
     private final Sobol generator;
     private final int dim;
 
+    /**
+     * Sobol path generator constructor
+     * @param process Stochastic process
+     * @param timeSteps Number of time steps in path
+     * @param duration Total duration of the path
+     * @throws Exception
+     */
     public SobolPathGenerator(GenericProcess process, int timeSteps,
                                 double duration) throws Exception {
         this.process = process;
