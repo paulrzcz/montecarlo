@@ -3,43 +3,74 @@ package cz.paulrz.montecarlo.accumulator;
 import java.util.HashMap;
 
 /**
- * Created by IntelliJ IDEA.
- * User: paul
- * Date: 12/4/11
- * Time: 12:52 PM
- * To change this template use File | Settings | File Templates.
+ * Accumulator building a histogram of path valuations
  */
-public class HistoAccumulator implements Accumulator<Double> {
+public class HistoAccumulator implements Accumulator<Double, HashMap<Double, Integer>> {
 
+    /**
+     * Default constructor
+     */
     public HistoAccumulator() {
-        histo = new HashMap<Double, Integer>();
+        _histo = new HashMap<Double, Integer>();
     }
 
+    /**
+     * Copy constructor
+     * @param c Source accumulator
+     */
     public HistoAccumulator(HistoAccumulator c) {
-        histo = (HashMap<Double, Integer>)c.histo.clone();
+        _histo = (HashMap<Double, Integer>)c._histo.clone();
     }
 
-    public final HashMap<Double, Integer> histo;
+    /**
+     * Histogram map
+     */
+    private final HashMap<Double, Integer> _histo;
 
+    /**
+     * Add single value
+     * @param x Path value
+     */
     public void addValue(final Double x) {
         final double rounded = Math.round(x*1000.0)/1000.0;
-        if (histo.containsKey(rounded))
+        if (_histo.containsKey(rounded))
         {
-            int v = histo.get(rounded);
-            histo.put(rounded, v+1);
+            int v = _histo.get(rounded);
+            _histo.put(rounded, v+1);
         }
         else
-            histo.put(rounded, 1);
+            _histo.put(rounded, 1);
     }
 
-    public double norm(Accumulator<Double> other) {
+    /**
+     * Calculates a value of accumulator
+     * @return value
+     */
+    public HashMap<Double, Integer> value() {
+        return _histo;
+    }
+
+    /**
+     * Norm is not implemented
+     * @param other Second accumulator
+     * @return Zero
+     */
+    public double norm(Accumulator<Double, HashMap<Double, Integer>> other) {
         return 0;
     }
 
-    public Accumulator<Double> deepCopy() {
+    /**
+     * Deep copy
+     * @return Accumulator copy
+     */
+    public Accumulator<Double, HashMap<Double, Integer>> deepCopy() {
         return new HistoAccumulator(this);
     }
 
+    /**
+     * Clone. Same as deep copy
+     * @return Copy
+     */
     public HistoAccumulator clone() {
         return new HistoAccumulator(this);
     }

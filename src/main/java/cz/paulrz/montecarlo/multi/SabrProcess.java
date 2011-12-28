@@ -7,9 +7,7 @@ import cern.colt.matrix.DoubleMatrix2D;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * User: paul
- * Date: 2/5/11
- * Time: 17:02 PM
+ * Stochastic Alpha-Beta-Rho process
  */
 public final class SabrProcess extends StochasticProcess {
 

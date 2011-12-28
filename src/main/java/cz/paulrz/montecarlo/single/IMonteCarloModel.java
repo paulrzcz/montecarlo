@@ -7,7 +7,7 @@ import org.apache.commons.math.MathException;
  * This is an interface of Monte Carlo model.
  *
  */
-public interface IMonteCarloModel<TValue> {
+public interface IMonteCarloModel<TValue, OutValue> {
     /**
      * Adds path samples to statistics
      *
@@ -32,5 +32,5 @@ public interface IMonteCarloModel<TValue> {
      *
      * @return Statistics summary
      */
-    Accumulator<TValue> getStats();
+    Accumulator<TValue, OutValue> getStats();
 }

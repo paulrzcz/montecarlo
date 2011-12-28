@@ -18,8 +18,8 @@ import java.util.concurrent.Future;
  * Date: 1/10/11
  * Time: 17:58 PM
  */
-public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
-    private final Accumulator<TValue> summary;
+public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCarloModel<TValue, OutValue> {
+    private final Accumulator<TValue, OutValue> summary;
     private final RandomGeneratorFactory factory;
     private final PathValuation<TValue> pathValuation;
     private final boolean useAntithetic;
@@ -40,7 +40,7 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel<T
      */
     public ParallelMonteCarloModel(RandomGeneratorFactory random,
                                    GenericProcess process, double duration, int timeSteps,
-                                   PathValuation<TValue> valuation, Accumulator<TValue> statistics,
+                                   PathValuation<TValue> valuation, Accumulator<TValue, OutValue> statistics,
                                    boolean useAntithetic) {
         this.factory = random;
         this.summary = statistics;
@@ -83,7 +83,7 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel<T
         return 0;
     }
 
-    public Accumulator<TValue> getStats() {
+    public Accumulator<TValue, OutValue> getStats() {
         return summary;
     }
 

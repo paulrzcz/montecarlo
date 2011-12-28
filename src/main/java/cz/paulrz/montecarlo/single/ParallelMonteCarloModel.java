@@ -15,8 +15,8 @@ import java.util.concurrent.*;
  * Date: 29/9/11
  * Time: 08:25 AM
  */
-public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
-    private final Accumulator<TValue> summary;
+public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCarloModel<TValue, OutValue> {
+    private final Accumulator<TValue, OutValue> summary;
     private final PathValuation<TValue> pathValuation;
     private final RandomGeneratorFactory randomFactory;
     private final boolean useAntithetic;
@@ -27,7 +27,7 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
 
     public ParallelMonteCarloModel(RandomGeneratorFactory random,
                                    GenericProcess1D process, double duration, int timeSteps,
-                                   PathValuation<TValue> valuation, Accumulator<TValue> statistics,
+                                   PathValuation<TValue> valuation, Accumulator<TValue, OutValue> statistics,
                                    boolean useAntithetic, boolean useBridge) {
         this.summary = statistics;
         this.useAntithetic = useAntithetic;
@@ -69,10 +69,10 @@ public final class ParallelMonteCarloModel<TValue> implements IMonteCarloModel {
     }
 
     public int addSamples(int minSamples, double eps, int maxSteps) throws MathException {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        throw new MathException("Not implemented!");
     }
 
-    public Accumulator getStats() {
+    public Accumulator<TValue, OutValue> getStats() {
         return summary;
     }
 

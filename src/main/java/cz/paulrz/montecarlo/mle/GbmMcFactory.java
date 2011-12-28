@@ -4,9 +4,7 @@ import cz.paulrz.montecarlo.single.GeometricBrownianMotionProcess;
 import cz.paulrz.montecarlo.single.StochasticProcess1D;
 
 /**
- * User: paul
- * Date: 1/11/11
- * Time: 15:21 PM
+ *
  */
 public class GbmMcFactory extends DefaultMcFactory {
 

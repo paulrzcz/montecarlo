@@ -9,6 +9,7 @@ import cz.paulrz.montecarlo.multi.MonteCarloModel;
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
 import junit.framework.TestCase;
 import org.apache.commons.math.MathException;
+import org.apache.commons.math.stat.descriptive.SummaryStatistics;
 
 /**
  * User: paul
@@ -38,7 +39,7 @@ public class McTests2D extends TestCase {
                 DoubleFactory1D.dense.make(mu), DoubleFactory2D.dense.make(sigma));
         LogArrivedPointValuation apv = new LogArrivedPointValuation(0);
         summary = new SimpleAccumulator();
-        mcm = new MonteCarloModel<Double>(new FastGaussianRandomGenerator(), process, 1.0, 100, apv, summary, true);
+        mcm = new MonteCarloModel<Double, SummaryStatistics>(new FastGaussianRandomGenerator(), process, 1.0, 100, apv, summary, true);
     }
 
     public void testMeanAndVariance() throws MathException {

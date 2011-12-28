@@ -8,24 +8,24 @@ import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
  */
 public final class SingleMcFactory {
 
-    public static <T> IMonteCarloModel<T> createSimpleMc(
+    public static <T, O> IMonteCarloModel<T, O> createSimpleMc(
             StochasticProcess1D sp, double duration, int timeSteps,
-            PathValuation<T> valuation, Accumulator<T> statistics) {
-        return new MonteCarloModel<T>(new FastGaussianRandomGenerator(),
+            PathValuation<T> valuation, Accumulator<T, O> statistics) {
+        return new MonteCarloModel<T, O>(new FastGaussianRandomGenerator(),
                 sp, duration, timeSteps, valuation, statistics, false, false);
     }
 
-    public static <T> IMonteCarloModel<T> createSobolMc(
+    public static <T, O> IMonteCarloModel<T, O> createSobolMc(
             StochasticProcess1D sp, double duration, int timeSteps,
-            PathValuation<T> valuation, Accumulator<T> statistics) throws Exception {
-        return new MonteCarloModel<T>(sp, duration, timeSteps, valuation, statistics, true);
+            PathValuation<T> valuation, Accumulator<T, O> statistics) throws Exception {
+        return new MonteCarloModel<T, O>(sp, duration, timeSteps, valuation, statistics, true);
     }
 
-    public static <T> IMonteCarloModel<T> createBridgedMc(
+    public static <T, O> IMonteCarloModel<T, O> createBridgedMc(
             StochasticProcess1D sp, double duration, int timeSteps,
-            PathValuation<T> valuation, Accumulator<T> statistics) {
+            PathValuation<T> valuation, Accumulator<T, O> statistics) {
 
-        return new MonteCarloModel<T>(new FastGaussianRandomGenerator(),
+        return new MonteCarloModel<T, O>(new FastGaussianRandomGenerator(),
                 sp, duration, timeSteps, valuation, statistics, true, true);
 
     }

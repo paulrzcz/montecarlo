@@ -4,9 +4,7 @@ import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import cz.paulrz.montecarlo.single.StochasticProcess1D;
 
 /**
- * User: paul
- * Date: 1/11/11
- * Time: 14:50 PM
+ *
  */
 public interface McFactory {
 
@@ -16,5 +14,5 @@ public interface McFactory {
 
     StochasticProcess1D createProcess(double x0, double[] parameters);
 
-    IMonteCarloModel<Double> createModel(double x0, double x1, double[] parameters);
+    IMonteCarloModel<Double, Double> createModel(double x0, double x1, double[] parameters);
 }

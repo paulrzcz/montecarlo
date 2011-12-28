@@ -7,9 +7,7 @@ import cz.paulrz.montecarlo.single.SingleMcFactory;
 import cz.paulrz.montecarlo.single.StochasticProcess1D;
 
 /**
- * User: paul
- * Date: 1/11/11
- * Time: 14:53 PM
+ *
  */
 public abstract class DefaultMcFactory implements McFactory {
 
@@ -23,7 +21,7 @@ public abstract class DefaultMcFactory implements McFactory {
 
     private final ArrivedPointValuation apv = new ArrivedPointValuation();
 
-    public IMonteCarloModel<Double> createModel(double x0, double x1, double[] parameters) {
+    public IMonteCarloModel<Double, Double> createModel(double x0, double x1, double[] parameters) {
         StochasticProcess1D sp = createProcess(x0, parameters);
         ProbabilityAccumulator pa = new ProbabilityAccumulator(x1);
 

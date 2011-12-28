@@ -5,20 +5,24 @@ import org.apache.commons.math.stat.descriptive.SummaryStatistics;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * Created by IntelliJ IDEA.
- * User: paul
- * Date: 12/4/11
- * Time: 10:01 AM
- * To change this template use File | Settings | File Templates.
+ * Accumulator that collects statistics over 3 parameters:
+ * maximum, minimum and close value of path
  */
-public class MaxMinCloseAccumulator implements Accumulator<MaxMinClose> {
+public class MaxMinCloseAccumulator implements Accumulator<MaxMinClose, SummaryStatistics> {
 
+    /**
+     * Default constructor
+     */
     public MaxMinCloseAccumulator() {
         max   = new SummaryStatistics();
         min   = new SummaryStatistics();
         close = new SummaryStatistics();
     }
 
+    /**
+     * Copy constructor
+     * @param a Source accumulator
+     */
     public MaxMinCloseAccumulator(MaxMinCloseAccumulator a) {
         max   = a.max.copy();
         min   = a.min.copy();
@@ -29,13 +33,32 @@ public class MaxMinCloseAccumulator implements Accumulator<MaxMinClose> {
     public SummaryStatistics min = new SummaryStatistics();
     public SummaryStatistics close = new SummaryStatistics();
 
+
+    /**
+     * Add single value
+     * @param value Path value
+     */
     public void addValue(MaxMinClose value) {
         max.addValue(value.max);
         min.addValue(value.min);
         close.addValue(value.close);
     }
 
-    public double norm(Accumulator<MaxMinClose> other) {
+    /**
+     * Provides a close statistics
+     * @return close field
+     */
+    public SummaryStatistics value() {
+        return close;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    /**
+     * Calculates a distance between two accumulators.
+     * Used for converge testing
+     * @param other Second accumulator
+     * @return Distance
+     */
+    public double norm(Accumulator<MaxMinClose, SummaryStatistics> other) {
         MaxMinCloseAccumulator that = (MaxMinCloseAccumulator) other;
 
         return FastMath.abs(max.getMean() - that.max.getMean()) +
@@ -43,6 +66,10 @@ public class MaxMinCloseAccumulator implements Accumulator<MaxMinClose> {
                 FastMath.abs(close.getMean() - that.close.getMean());
     }
 
+    /**
+     * Deep copy
+     * @return Accumulator copy
+     */
     public MaxMinCloseAccumulator deepCopy() {
         return new MaxMinCloseAccumulator(this);
     }

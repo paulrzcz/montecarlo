@@ -48,7 +48,7 @@ public class PercentileTests extends TestCase {
         GeometricBrownianMotionProcess process = new GeometricBrownianMotionProcess(1.0, 0.0, 1.0);
         LogArrivedPointValuation apv = new LogArrivedPointValuation();
         MedianAccumulator summary = new MedianAccumulator();
-        IMonteCarloModel mcm = new ParallelMonteCarloModel<Double>(new FastRandomFactory(),
+        IMonteCarloModel mcm = new ParallelMonteCarloModel<Double, Double>(new FastRandomFactory(),
                 process, 1.0, 100, apv, summary, true, true);
 
         mcm.addSamples(50000);

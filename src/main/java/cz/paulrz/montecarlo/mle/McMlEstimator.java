@@ -8,9 +8,7 @@ import org.apache.commons.math.optimization.SimpleRealPointChecker;
 import org.apache.commons.math.optimization.direct.NelderMead;
 
 /**
- * User: paul
- * Date: 1/11/11
- * Time: 15:00 PM
+ *
  */
 public class McMlEstimator {
 

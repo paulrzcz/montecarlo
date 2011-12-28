@@ -8,9 +8,7 @@ import org.apache.commons.math.analysis.MultivariateRealFunction;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * User: paul
- * Date: 1/11/11
- * Time: 15:03 PM
+ *
  */
 final class MlFunction implements MultivariateRealFunction {
 
@@ -35,10 +33,10 @@ final class MlFunction implements MultivariateRealFunction {
     }
 
     private double onePoint(double x0, double x1, double[] point) throws FunctionEvaluationException {
-        final IMonteCarloModel<Double> mc = factory.createModel(x0, x1, point);
+        final IMonteCarloModel<Double, Double> mc = factory.createModel(x0, x1, point);
         try{
             mc.addSamples(samples);
-            final double value = ((ProbabilityAccumulator) mc.getStats()).probability();
+            final double value = mc.getStats().value();
 
             return FastMath.log(value);
         }

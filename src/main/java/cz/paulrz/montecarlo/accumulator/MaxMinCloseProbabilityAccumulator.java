@@ -8,7 +8,7 @@ import org.apache.commons.math.util.FastMath;
  * Date: 3/5/11
  * Time: 09:44 AM
  */
-public class MaxMinCloseProbabilityAccumulator implements Accumulator<MaxMinClose> {
+public class MaxMinCloseProbabilityAccumulator implements Accumulator<MaxMinClose, Double> {
 
     private final double close;
     private final long lclose;
@@ -32,6 +32,21 @@ public class MaxMinCloseProbabilityAccumulator implements Accumulator<MaxMinClos
         lmin = round(min);
         this.max = max;
         lmax = round(max);
+    }
+
+    public MaxMinCloseProbabilityAccumulator(MaxMinCloseProbabilityAccumulator that) {
+        scale = that.scale;
+        close = that.close;
+        lclose = that.lclose;
+        min = that.min;
+        lmin = that.lmin;
+        max = that.max;
+        lmax = that.lmax;
+
+        total = that.total;
+        chits = that.chits;
+        minhits = that.minhits;
+        maxhits = that.maxhits;
     }
 
     public double pmax() {
@@ -69,12 +84,20 @@ public class MaxMinCloseProbabilityAccumulator implements Accumulator<MaxMinClos
             maxhits++;
     }
 
-    public double norm(Accumulator<MaxMinClose> other) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    public Double value() {
+        return pclose();
     }
 
-    public Accumulator<MaxMinClose> deepCopy() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public double norm(Accumulator<MaxMinClose, Double> other) {
+        MaxMinCloseProbabilityAccumulator that = (MaxMinCloseProbabilityAccumulator) other;
+
+        return FastMath.abs(that.pclose() - pclose()) +
+                FastMath.abs(that.pmax() - pmax()) +
+                FastMath.abs(that.pmin() - pmin());
+    }
+
+    public Accumulator<MaxMinClose, Double> deepCopy() {
+        return new MaxMinCloseProbabilityAccumulator(this);
     }
 
     private long round(double x) {

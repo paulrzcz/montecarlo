@@ -25,8 +25,8 @@ import org.apache.commons.math.random.NormalizedRandomGenerator;
  * evaluate them and collect statistics.
  * 
  */
-public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
-    private final Accumulator<TValue> summary;
+public final class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel<TValue, OutValue> {
+    private final Accumulator<TValue, OutValue> summary;
     private final PathGenerator1D pathGenerator;
     private final PathValuation<TValue> pathValuation;
     private final boolean useAntithetic;
@@ -43,7 +43,7 @@ public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
      */
     public MonteCarloModel(NormalizedRandomGenerator random,
             GenericProcess1D process, double duration, int timeSteps,
-            PathValuation<TValue> valuation, Accumulator<TValue> statistics,
+            PathValuation<TValue> valuation, Accumulator<TValue, OutValue> statistics,
             boolean useAntithetic, boolean useBridge) {
         this.summary = statistics;
         this.useAntithetic = useAntithetic;
@@ -73,7 +73,7 @@ public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
      * @param statistics Statistics summary
      */
     public MonteCarloModel(GenericProcess1D process, double duration, int timeSteps,
-                           PathValuation<TValue> valuation, Accumulator<TValue> statistics,
+                           PathValuation<TValue> valuation, Accumulator<TValue, OutValue> statistics,
                            boolean useBridge) throws Exception {
         this.summary = statistics;
         this.pathGenerator = new SobolPathGenerator1D(process, timeSteps, duration, useBridge);
@@ -94,7 +94,7 @@ public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
 
     public int addSamples(final int minSamples, double eps, int maxSteps) throws MathException {
         addSamples(minSamples);
-        Accumulator<TValue> prev = summary.deepCopy();
+        Accumulator<TValue, OutValue> prev = summary.deepCopy();
         int steps = 1;
         while(steps==1 || summary.norm(prev) > eps) {
             prev = summary.deepCopy();
@@ -107,7 +107,7 @@ public final class MonteCarloModel<TValue> implements IMonteCarloModel<TValue> {
         return steps*minSamples;
     }
 
-    public Accumulator<TValue> getStats() {
+    public Accumulator<TValue, OutValue> getStats() {
         return summary;
     }
 }

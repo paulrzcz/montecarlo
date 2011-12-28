@@ -3,9 +3,7 @@ package cz.paulrz.montecarlo.random;
 import org.apache.commons.math.util.FastMath;
 
 /**
- * User: paul
- * Date: 9/5/11
- * Time: 10:36 AM
+ * Brownian bridge
  */
 public final class BrownianBridge {
     private final int size_;
