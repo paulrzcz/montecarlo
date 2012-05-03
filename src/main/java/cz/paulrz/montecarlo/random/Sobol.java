@@ -97,7 +97,6 @@ public final class Sobol extends BitsStreamGenerator {
      */
     @Override
     public void setSeed(int seed) {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -105,7 +104,6 @@ public final class Sobol extends BitsStreamGenerator {
      */
     @Override
     public void setSeed(int[] seed) {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -113,7 +111,6 @@ public final class Sobol extends BitsStreamGenerator {
      */
     @Override
     public void setSeed(long seed) {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     /**
@@ -129,7 +126,7 @@ public final class Sobol extends BitsStreamGenerator {
      */
     @Override
     protected int next(int bits) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return 0;
     }
 
     @Override
@@ -236,7 +233,6 @@ public final class Sobol extends BitsStreamGenerator {
     private int index;
 
     private double[] x;
-    private double[] z;
 
     /**
      * @param dim dimension of the Sobol sequence.
@@ -244,7 +240,7 @@ public final class Sobol extends BitsStreamGenerator {
     public Sobol(int dim) throws Exception {
         this.dim = dim;
         if (dim > 300) {
-                throw new Exception
+            throw new Exception
                     ("Sobol sequence only implemented for dimension at most 300." +
                             "\nExiting.");
         }
@@ -267,18 +263,57 @@ public final class Sobol extends BitsStreamGenerator {
                     k++;
                 } else break;
 
-/* DEBUG: print the primitive polynomials:
-System.out.println("\nPrimitive polynomials:\n");
-for(k=0;k<50;k++)
-{  
-    for(int j=0;j<=g[k];j++)System.out.print(p[k][j]);
-    System.out.println(""); 
-}
-*/
 
-
-// initialize the array of direction integers
+        // initialize the array of direction integers
         v = new long[dim][bits];
+        initFirst31dim(dim);
+
+        // random initialization in dimension bigger than 32
+        if (dim >= 32) {
+            initOthersDim(dim);
+        }
+        // end direction integer initialization
+
+
+// computation of direction integer v_kl for k>=degree[k]
+        for (k = 1; k < dim; k++)
+            for (int l = g[k]; l < bits; l++) {
+                long n = (v[k][l - g[k]] >> g[k]);
+                for (int j = 1; j <= g[k]; j++) if (p[k][j] != 0) n = n ^ v[k][l - j];
+
+                v[k][l] = n;
+
+            }
+
+
+// initialize the vector of Sobol integers and Sobol points
+        index = 1;
+        x_int = new long[dim];
+        for (k = 0; k < dim; k++) x_int[k] = v[k][0];
+
+        x = new double[dim];
+        for (k = 0; k < dim; k++) x[k] = ((double) x_int[k]) / N;
+
+
+    }// end constructor
+
+    private void initOthersDim(int dim) {
+        MersenneTwister mt = new MersenneTwister();
+        for (int k = 32; k < dim; k++) {
+            for (int l = 0; l < g[k]; l++) {
+                double u = mt.nextDouble();
+                long f = (1L << l + 1), n = (int) (f * u);
+                while (n % 2 == 0) {
+                    u = mt.nextDouble();
+                    n = (int) (f * u);
+                }
+
+                v[k][l] = (n << (bits - l - 1));
+            }
+        }
+    }
+
+    private void initFirst31dim(int dim) {
         for (int j = 0; j < bits; j++) v[0][j] = (1L << (bits - j - 1));
 
         if (dim > 1)
@@ -546,45 +581,7 @@ for(k=0;k<50;k++)
             v[31][5] = (29L << bits - 6);
             v[31][6] = (3L << bits - 7);
         }
-
-
-        // random initialization in dimension bigger than 32
-        MersenneTwister mt = new MersenneTwister();
-        for(k=32;k<dim;k++)
-        {
-            for(int l=0;l<g[k];l++)
-            {
-                double u = mt.nextDouble();
-                long f=(1L<<l+1), n=(int)(f*u);
-                while(n%2==0){ u=mt.nextDouble(); n=(int)(f*u); }
-
-                v[k][l]=(n<<(bits-l-1));
-            }
-        } // end direction integer initialization
-
-
-
-// computation of direction integer v_kl for k>=degree[k]
-        for (k = 1; k < dim; k++)
-            for (int l = g[k]; l < bits; l++) {
-                long n = (v[k][l - g[k]] >> g[k]);
-                for (int j = 1; j <= g[k]; j++) if (p[k][j] != 0) n = n ^ v[k][l - j];
-
-                v[k][l] = n;
-
-            }
-
-
-// initialize the vector of Sobol integers and Sobol points
-        index = 1;
-        x_int = new long[dim];
-        for (k = 0; k < dim; k++) x_int[k] = v[k][0];
-
-        x = new double[dim];
-        for (k = 0; k < dim; k++) x[k] = ((double) x_int[k]) / N;
-
-
-    }// end constructor
+    }
 
 
     /**

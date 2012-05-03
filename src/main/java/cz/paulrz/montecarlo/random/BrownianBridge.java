@@ -7,7 +7,6 @@ import org.apache.commons.math3.util.FastMath;
  */
 public final class BrownianBridge {
     private final int size_;
-    private final double dt;
     private final double sqrtdt;
     private final int[] bridgeIndex_, leftIndex_, rightIndex_;
     private final double[] leftWeight_, rightWeight_, stdDev_;
@@ -15,7 +14,6 @@ public final class BrownianBridge {
 
     public BrownianBridge(int steps, double dt) {
         size_ = steps;
-        this.dt = dt;
         sqrtdt = FastMath.sqrt(dt);
         bridgeIndex_ = new int[steps];
         leftIndex_ = new int[steps];

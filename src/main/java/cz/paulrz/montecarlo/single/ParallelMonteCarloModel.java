@@ -108,13 +108,16 @@ public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCa
 
             final NormalizedRandomGenerator random = randomFactory.newGenerator();
 
+            if (random == null)
+                throw new NullPointerException("Random factory returned null generator");
+
             if (useAntithetic && useBridge)
                 return new AntitheticBridgedPathGenerator1D(process, timeSteps,
                         duration, random);
             else if (useAntithetic && !useBridge)
                 return new AntitheticPathGenerator1D(process, timeSteps,
                         duration, random);
-            else if (!useAntithetic && useBridge)
+            else if (useBridge)
                 return new BridgedPathGenerator1D(process, timeSteps, duration, random);
             else
                 return new SimplePathGenerator1D(process, timeSteps, duration, random);

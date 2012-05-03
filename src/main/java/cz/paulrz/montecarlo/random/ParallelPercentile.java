@@ -266,8 +266,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
         if (length == 1) {
             return values[begin]; // always return single value for n = 1
         }
-        double n = length;
-        double pos = p * (n + 1) / 100;
+        double pos = p * (length + 1) / 100;
         double fpos = FastMath.floor(pos);
         int intPos = (int) fpos;
         double dif = pos - fpos;
@@ -286,7 +285,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
         if (pos < 1) {
             return select(work, pivotsHeap, 0);
         }
-        if (pos >= n) {
+        if (pos >= length) {
             return select(work, pivotsHeap, length - 1);
         }
 

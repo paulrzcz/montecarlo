@@ -11,11 +11,10 @@ import cern.colt.matrix.linalg.SmpBlas;
  */
 public final class MatrixHelper {
 
-    private static int numOfCpu = 1;
     public static Blas blas;
 
     static {
-        numOfCpu = Runtime.getRuntime().availableProcessors();
+        int numOfCpu = Runtime.getRuntime().availableProcessors();
 
         if (numOfCpu > 1)
         {

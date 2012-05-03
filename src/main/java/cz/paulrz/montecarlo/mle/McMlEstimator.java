@@ -25,10 +25,8 @@ public class McMlEstimator {
         optimizer.setSimplex(simplex);
 
 
-        PointValuePair result =
+        return
                 optimizer.optimize(100, function,
                         GoalType.MAXIMIZE, factory.getStartingPoint());
-
-        return result;
     }
 }

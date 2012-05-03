@@ -17,7 +17,6 @@ import org.apache.commons.math3.util.FastMath;
 public final class HestonProcess extends StochasticProcess {
 
     private final double riskFreeRate;
-    private final double v0;
     private final double kappa;
     private final double theta;
     private final double sigma;
@@ -30,7 +29,6 @@ public final class HestonProcess extends StochasticProcess {
         super(DoubleFactory1D.dense.make(new double[] {s0, v0}),
                 new EulerDiscretization());
         this.riskFreeRate = riskFreeRate;
-        this.v0 = v0;
         this.kappa = kappa;
         this.theta = theta;
         this.sigma = sigma;

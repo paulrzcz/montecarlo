@@ -71,7 +71,7 @@ public class HistoAccumulator implements Accumulator<Double, HashMap<Double, Int
      * Clone. Same as deep copy
      * @return Copy
      */
-    public HistoAccumulator clone() {
+    public HistoAccumulator clone() throws CloneNotSupportedException {
         return new HistoAccumulator(this);
     }
 }

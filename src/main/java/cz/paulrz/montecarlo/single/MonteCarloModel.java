@@ -53,7 +53,7 @@ public final class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel
         else if (useAntithetic && !useBridge)
             this.pathGenerator = new AntitheticPathGenerator1D(process, timeSteps,
                     duration, random);
-        else if (!useAntithetic && useBridge)
+        else if (useBridge)
             this.pathGenerator = new BridgedPathGenerator1D(process, timeSteps, duration, random);
         else
             this.pathGenerator = new SimplePathGenerator1D(process, timeSteps, duration, random);

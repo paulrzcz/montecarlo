@@ -1,12 +1,5 @@
 package cz.paulrz.montecarlo.single;
 
-/**
- * Created by IntelliJ IDEA.
- * User: paul
- * Date: 12/4/11
- * Time: 09:58 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MaxMinCloseValuation implements PathValuation<MaxMinClose> {
     public MaxMinClose value(Path path) {
         double[] values = path.getValues();
