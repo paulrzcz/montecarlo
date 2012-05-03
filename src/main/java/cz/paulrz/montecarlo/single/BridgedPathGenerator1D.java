@@ -1,8 +1,7 @@
 package cz.paulrz.montecarlo.single;
 
 import cz.paulrz.montecarlo.random.BrownianBridge;
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * User: paul
@@ -26,7 +25,7 @@ public final class BridgedPathGenerator1D implements PathGenerator1D {
         bridge = new BrownianBridge(timeSteps, dt);
     }
 
-    public Path next() throws FunctionEvaluationException {
+    public Path next() {
         final Path path = new Path(timeSteps, dt);
         path.addValue(process.getInitialX());
 

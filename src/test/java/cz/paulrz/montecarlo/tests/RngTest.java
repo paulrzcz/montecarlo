@@ -2,7 +2,7 @@ package cz.paulrz.montecarlo.tests;
 
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
 import junit.framework.TestCase;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * User: paul

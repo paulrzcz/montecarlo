@@ -1,7 +1,7 @@
 package cz.paulrz.montecarlo.single;
 
 import cz.paulrz.montecarlo.accumulator.Accumulator;
-import org.apache.commons.math.MathException;
+import org.apache.commons.math3.exception.MathArithmeticException;
 
 /**
  * This is an interface of Monte Carlo model.
@@ -13,7 +13,7 @@ public interface IMonteCarloModel<TValue, OutValue> {
      *
      * @param samples Number of paths to add
      */
-    int addSamples(int samples) throws MathException;
+    int addSamples(int samples) throws MathArithmeticException;
 
     /**
      * Adds path sample to statistics until either statistics converges
@@ -23,9 +23,9 @@ public interface IMonteCarloModel<TValue, OutValue> {
      * @param eps
      * @param maxSteps
      * @return
-     * @throws MathException
+     * @throws MathArithmeticException
      */
-    int addSamples(int minSamples, double eps, int maxSteps) throws MathException;
+    int addSamples(int minSamples, double eps, int maxSteps) throws MathArithmeticException;
 
     /**
      * Gets statistics summary

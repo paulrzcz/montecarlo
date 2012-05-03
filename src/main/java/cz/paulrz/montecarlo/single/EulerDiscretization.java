@@ -16,8 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * Euler equally spaced discretization
@@ -27,13 +26,13 @@ public final class EulerDiscretization implements Discretization {
 
     /** {@inheritDoc} */
     public double drift(final StochasticProcess1D process, final double t, final double x,
-                        final double dt) throws FunctionEvaluationException {
+                        final double dt) {
         return process.drift(t, x) * dt;
     }
 
     /** {@inheritDoc} */
     public double diffusion(final StochasticProcess1D process, final double t, final double x,
-            final double dt) throws FunctionEvaluationException {
+            final double dt) {
         return process.diffusion(t, x) * FastMath.sqrt(dt);
     }
 

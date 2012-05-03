@@ -5,9 +5,8 @@ import cz.paulrz.montecarlo.random.FastRandomFactory;
 import cz.paulrz.montecarlo.single.*;
 import cz.paulrz.montecarlo.accumulator.SimpleAccumulator;
 import junit.framework.TestCase;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
-import org.apache.commons.math.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 
 /**
  * User: paul
@@ -36,7 +35,7 @@ public class McTests extends TestCase {
         mcm = new MonteCarloModel<Double, SummaryStatistics>(nrg, process, 1.0, 100, apv, summary, true, false);
     }
 
-    public void testMeanAndVariance() throws MathException {
+    public void testMeanAndVariance() {
         long ms = System.currentTimeMillis();
         int iters = mcm.addSamples(500000);
         ms = System.currentTimeMillis() - ms;
@@ -54,7 +53,7 @@ public class McTests extends TestCase {
         // assertEquals(expectedStdDev, stddev, 0.05);
     }
 
-    public void testMeanAndVarianceParallel() throws MathException {
+    public void testMeanAndVarianceParallel() {
         LogArrivedPointValuation apv = new LogArrivedPointValuation();
         mcm = new ParallelMonteCarloModel<Double, SummaryStatistics>(new FastRandomFactory(),
                 process, 1.0, 100, apv, summary, true, false);

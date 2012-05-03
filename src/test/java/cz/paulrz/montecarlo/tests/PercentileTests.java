@@ -9,9 +9,8 @@ import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import cz.paulrz.montecarlo.single.LogArrivedPointValuation;
 import cz.paulrz.montecarlo.single.ParallelMonteCarloModel;
 import junit.framework.TestCase;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
-import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 /**
  * User: paul
@@ -43,7 +42,7 @@ public class PercentileTests extends TestCase {
         System.out.println(median);
     }
 
-    public void testMcMedian() throws MathException {
+    public void testMcMedian() {
         // mean should be 1.0, and stddev = sqrt(e-1)
         GeometricBrownianMotionProcess process = new GeometricBrownianMotionProcess(1.0, 0.0, 1.0);
         LogArrivedPointValuation apv = new LogArrivedPointValuation();

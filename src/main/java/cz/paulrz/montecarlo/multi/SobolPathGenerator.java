@@ -4,7 +4,6 @@ import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cz.paulrz.montecarlo.random.InverseCumulativeNormal;
 import cz.paulrz.montecarlo.random.Sobol;
-import org.apache.commons.math.MathException;
 
 /**
  * Path generator that uses a low-discrepancy Sobol generator
@@ -37,7 +36,7 @@ public final class SobolPathGenerator implements PathGenerator {
      *
      * @return Path for the stochastic process
      */
-    public Path next() throws MathException {
+    public Path next() {
         Path path = null;
 
         while(path == null)
@@ -48,7 +47,7 @@ public final class SobolPathGenerator implements PathGenerator {
         return path;
     }
 
-    private Path getNext() throws MathException {
+    private Path getNext() {
 
         Path path = new Path(dim, timeSteps, dt);
         path.addValue(process.getInitialVector());

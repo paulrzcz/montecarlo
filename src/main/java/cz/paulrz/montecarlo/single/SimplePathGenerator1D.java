@@ -16,8 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * SimplePathGenerator1D constructs random paths that satisfy stochastic process.
@@ -45,7 +44,7 @@ public final class SimplePathGenerator1D implements PathGenerator1D {
         this.dt = duration / timeSteps;
     }
 
-    public Path next() throws FunctionEvaluationException {
+    public Path next() {
         final Path path = new Path(timeSteps, dt);
         path.addValue(process.getInitialX());
 

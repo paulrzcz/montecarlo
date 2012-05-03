@@ -1,6 +1,6 @@
 package cz.paulrz.montecarlo.random;
 
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * User: paul

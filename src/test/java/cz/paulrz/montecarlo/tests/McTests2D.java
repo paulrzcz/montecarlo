@@ -8,8 +8,7 @@ import cz.paulrz.montecarlo.multi.LogArrivedPointValuation;
 import cz.paulrz.montecarlo.multi.MonteCarloModel;
 import cz.paulrz.montecarlo.random.FastGaussianRandomGenerator;
 import junit.framework.TestCase;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 
 /**
  * User: paul
@@ -42,7 +41,7 @@ public class McTests2D extends TestCase {
         mcm = new MonteCarloModel<Double, SummaryStatistics>(new FastGaussianRandomGenerator(), process, 1.0, 100, apv, summary, true);
     }
 
-    public void testMeanAndVariance() throws MathException {
+    public void testMeanAndVariance() {
         long time = System.currentTimeMillis();
         int iters = mcm.addSamples(100000);
         time = System.currentTimeMillis() - time;

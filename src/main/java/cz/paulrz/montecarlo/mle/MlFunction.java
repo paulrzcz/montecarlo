@@ -1,16 +1,13 @@
 package cz.paulrz.montecarlo.mle;
 
-import cz.paulrz.montecarlo.accumulator.ProbabilityAccumulator;
 import cz.paulrz.montecarlo.single.IMonteCarloModel;
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.analysis.MultivariateRealFunction;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.analysis.MultivariateFunction;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  *
  */
-final class MlFunction implements MultivariateRealFunction {
+final class MlFunction implements MultivariateFunction {
 
     private final double[] data;
     private final McFactory factory;
@@ -21,7 +18,7 @@ final class MlFunction implements MultivariateRealFunction {
         this.factory = factory;
     }
 
-    public double value(double[] point) throws FunctionEvaluationException, IllegalArgumentException {
+    public double value(double[] point) throws IllegalArgumentException {
         double sum = 0.0;
         for(int i=1; i < data.length; ++i) {
             sum += onePoint(data[i-1], data[i], point);
@@ -32,17 +29,11 @@ final class MlFunction implements MultivariateRealFunction {
         return sum;
     }
 
-    private double onePoint(double x0, double x1, double[] point) throws FunctionEvaluationException {
+    private double onePoint(double x0, double x1, double[] point) {
         final IMonteCarloModel<Double, Double> mc = factory.createModel(x0, x1, point);
-        try{
-            mc.addSamples(samples);
-            final double value = mc.getStats().value();
+        mc.addSamples(samples);
+        final double value = mc.getStats().value();
 
-            return FastMath.log(value);
-        }
-        catch (MathException e)
-        {
-            throw new FunctionEvaluationException(e, point);
-        }
+        return FastMath.log(value);
     }
 }

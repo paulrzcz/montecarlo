@@ -2,8 +2,7 @@ package cz.paulrz.montecarlo.multi;
 
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * Ordinary path generator. Suitable in the most of scenarios.
@@ -37,7 +36,7 @@ public final class SimplePathGenerator implements PathGenerator {
      *
      * @return Path for the stochastic process
      */
-    public Path next() throws FunctionEvaluationException {
+    public Path next() {
         final Path path = new Path(processDimension, timeSteps, dt);
         path.addValue(process.getInitialVector());
 

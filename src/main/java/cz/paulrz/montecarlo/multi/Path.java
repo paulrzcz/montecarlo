@@ -3,7 +3,7 @@ package cz.paulrz.montecarlo.multi;
 import cern.colt.matrix.DoubleFactory2D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.DoubleMatrix2D;
-import org.apache.commons.math.exception.OutOfRangeException;
+import org.apache.commons.math3.exception.OutOfRangeException;
 
 /**
  * Path is a sample of stochastic process's path discretized with uniform time

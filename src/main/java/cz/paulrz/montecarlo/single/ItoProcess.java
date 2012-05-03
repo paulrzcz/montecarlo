@@ -16,8 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.analysis.MultivariateRealFunction;
+import org.apache.commons.math3.analysis.MultivariateFunction;
 
 /**
  * Generic Ito process X(t) = mu(x,t) dt + sigma(x,t) dW_t
@@ -25,8 +24,8 @@ import org.apache.commons.math.analysis.MultivariateRealFunction;
  */
 public class ItoProcess extends StochasticProcess1D {
 
-    private final MultivariateRealFunction mu;
-    private final MultivariateRealFunction sigma;
+    private final MultivariateFunction mu;
+    private final MultivariateFunction sigma;
 
     /**
      * Constructs Ito process with starting point x0, drift mu and diffusion
@@ -36,8 +35,8 @@ public class ItoProcess extends StochasticProcess1D {
      * @param mu Drift function mu(x,t)
      * @param sigma Diffusion function sigma(x,t)
      */
-    public ItoProcess(double x0, MultivariateRealFunction mu,
-            MultivariateRealFunction sigma) {
+    public ItoProcess(double x0, MultivariateFunction mu,
+                      MultivariateFunction sigma) {
         super(x0, new EulerDiscretization());
         this.mu = mu;
         this.sigma = sigma;
@@ -45,14 +44,14 @@ public class ItoProcess extends StochasticProcess1D {
 
     /** {@inheritDoc} */
     @Override
-    public double drift(double t, double x) throws FunctionEvaluationException {
+    public double drift(double t, double x) {
         double[] input = new double[] { t, x };
         return mu.value(input);
     }
 
     /** {@inheritDoc} */
     @Override
-    public double diffusion(double t, double x) throws FunctionEvaluationException {
+    public double diffusion(double t, double x) {
         double[] input = new double[] { t, x };
         return sigma.value(input);
     }

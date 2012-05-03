@@ -1,11 +1,10 @@
 package cz.paulrz.montecarlo.mle;
 
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.optimization.GoalType;
-import org.apache.commons.math.optimization.OptimizationException;
-import org.apache.commons.math.optimization.RealPointValuePair;
-import org.apache.commons.math.optimization.SimpleRealPointChecker;
-import org.apache.commons.math.optimization.direct.NelderMead;
+import org.apache.commons.math3.optimization.GoalType;
+import org.apache.commons.math3.optimization.PointValuePair;
+import org.apache.commons.math3.optimization.SimplePointChecker;
+import org.apache.commons.math3.optimization.direct.NelderMeadSimplex;
+import org.apache.commons.math3.optimization.direct.SimplexOptimizer;
 
 /**
  *
@@ -20,12 +19,15 @@ public class McMlEstimator {
         function = new MlFunction(data, factory);
     }
 
-    public RealPointValuePair estimate() throws FunctionEvaluationException, OptimizationException {
-        NelderMead optimizer = new NelderMead();
-        optimizer.setStartConfiguration(factory.getStartConfiguration());
-        optimizer.setConvergenceChecker(new SimpleRealPointChecker(-0.001, 1e-10));
+    public PointValuePair estimate() {
+        NelderMeadSimplex simplex = new NelderMeadSimplex(factory.getStartConfiguration());
+        SimplexOptimizer optimizer = new SimplexOptimizer(new SimplePointChecker<PointValuePair>());
+        optimizer.setSimplex(simplex);
 
-        RealPointValuePair result = optimizer.optimize(function, GoalType.MAXIMIZE, factory.getStartingPoint());
+
+        PointValuePair result =
+                optimizer.optimize(100, function,
+                        GoalType.MAXIMIZE, factory.getStartingPoint());
 
         return result;
     }

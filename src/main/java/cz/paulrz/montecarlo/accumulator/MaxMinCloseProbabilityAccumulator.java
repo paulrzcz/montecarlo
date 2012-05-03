@@ -1,7 +1,7 @@
 package cz.paulrz.montecarlo.accumulator;
 
 import cz.paulrz.montecarlo.single.MaxMinClose;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * User: paul

@@ -16,9 +16,6 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.linear.RealVector;
-
 /**
  * Generic stochastic process X(t)
  * 
@@ -43,5 +40,5 @@ public interface GenericProcess1D {
      * @param dw Stochastic part
      * @return Position at x+dt, i.e. X(t+dt)
      */
-    double evolve(final double t, final double x, final double dt, final double dw) throws FunctionEvaluationException;
+    double evolve(final double t, final double x, final double dt, final double dw);
 }

@@ -1,6 +1,6 @@
 package cz.paulrz.montecarlo.accumulator;
 
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * User: paul

@@ -4,9 +4,7 @@ import cz.paulrz.montecarlo.mle.GbmMcFactory;
 import cz.paulrz.montecarlo.mle.McMlEstimator;
 import cz.paulrz.montecarlo.single.GeometricBrownianMotionProcess;
 import junit.framework.TestCase;
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.optimization.OptimizationException;
-import org.apache.commons.math.optimization.RealPointValuePair;
+import org.apache.commons.math3.optimization.PointValuePair;
 
 /**
  * User: paul
@@ -27,8 +25,8 @@ public class GbmEstimation extends TestCase {
         process = linear.estimate(1.0);
     }
 
-    public void testEstimate() throws FunctionEvaluationException, OptimizationException {
-        RealPointValuePair result = estimator.estimate();
+    public void testEstimate()  {
+        PointValuePair result = estimator.estimate();
 
         System.out.println(process.toString());
 

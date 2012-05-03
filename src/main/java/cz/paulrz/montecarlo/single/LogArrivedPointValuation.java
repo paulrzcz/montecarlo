@@ -16,7 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * This valuation provides a logarithm of a final, or arrived, point of the path

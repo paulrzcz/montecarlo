@@ -17,8 +17,7 @@
 package cz.paulrz.montecarlo.single;
 
 import cz.paulrz.montecarlo.accumulator.Accumulator;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * This class implements Monte Carlo model. It provides constructs paths,
@@ -81,7 +80,7 @@ public final class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel
         this.useAntithetic = false;
     }
 
-    public int addSamples(final int samples) throws MathException {
+    public int addSamples(final int samples) {
         final int allSamples = useAntithetic ? samples*2 : samples;
 
         for (int i = 0; i < allSamples; ++i) {
@@ -92,7 +91,7 @@ public final class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel
         return samples;
     }
 
-    public int addSamples(final int minSamples, double eps, int maxSteps) throws MathException {
+    public int addSamples(final int minSamples, double eps, int maxSteps) {
         addSamples(minSamples);
         Accumulator<TValue, OutValue> prev = summary.deepCopy();
         int steps = 1;

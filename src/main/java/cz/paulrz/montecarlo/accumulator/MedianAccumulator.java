@@ -1,7 +1,7 @@
 package cz.paulrz.montecarlo.accumulator;
 
-import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * Accumulator that calculates a median

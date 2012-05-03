@@ -4,8 +4,8 @@ import cz.paulrz.montecarlo.accumulator.Accumulator;
 import cz.paulrz.montecarlo.parallel.CpuPool;
 import cz.paulrz.montecarlo.random.RandomGeneratorFactory;
 import cz.paulrz.montecarlo.single.IMonteCarloModel;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.exception.MathInternalError;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCa
         this.timeSteps = timeSteps;
     }
 
-    public int addSamples(int samples) throws MathException {
+    public int addSamples(int samples) {
         List<Future<List<TValue>>> executionList = new ArrayList<Future<List<TValue>>>(CpuPool.numOfCpu);
         final int samplesPerPartition = samples / CpuPool.numOfCpu;
 
@@ -68,9 +68,9 @@ public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCa
                     summary.addValue(value);
                 }
             } catch (InterruptedException e) {
-                throw new MathException(e);
+                throw new MathInternalError(e);
             } catch (ExecutionException e) {
-                throw new MathException(e);
+                throw new MathInternalError(e);
             }
 
 
@@ -79,7 +79,7 @@ public final class ParallelMonteCarloModel<TValue, OutValue> implements IMonteCa
         return samplesPerPartition * CpuPool.numOfCpu;
     }
 
-    public int addSamples(int minSamples, double eps, int maxSteps) throws MathException {
+    public int addSamples(int minSamples, double eps, int maxSteps) {
         return 0;
     }
 

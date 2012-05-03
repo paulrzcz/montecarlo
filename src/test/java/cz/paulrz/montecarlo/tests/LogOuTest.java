@@ -6,8 +6,7 @@ import cz.paulrz.montecarlo.single.IMonteCarloModel;
 import cz.paulrz.montecarlo.single.LogOrnsteinUhlenbeckProcess;
 import cz.paulrz.montecarlo.single.MonteCarloModel;
 import junit.framework.TestCase;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 
 /**
  * User: paul
@@ -36,7 +35,7 @@ public class LogOuTest extends TestCase {
         mcm = new MonteCarloModel<Double, SummaryStatistics>(process, 1.0, 100, apv, summary, true);
     }
 
-    public void testMeanAndVariance() throws MathException {
+    public void testMeanAndVariance() {
         int iters = mcm.addSamples(10000, 1e-5, 100);
         double mean = summary.stats.getMean();
         double stddev = summary.stats.getStandardDeviation();

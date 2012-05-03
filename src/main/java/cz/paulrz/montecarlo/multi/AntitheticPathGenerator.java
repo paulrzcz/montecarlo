@@ -2,8 +2,7 @@ package cz.paulrz.montecarlo.multi;
 
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
-import org.apache.commons.math.FunctionEvaluationException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * User: paul
@@ -35,7 +34,7 @@ public final class AntitheticPathGenerator implements PathGenerator {
         this.dt = duration / timeSteps;
     }
 
-    public Path next() throws FunctionEvaluationException {
+    public Path next() {
         if (nextPath!=null)
         {
             final Path retPath = nextPath;

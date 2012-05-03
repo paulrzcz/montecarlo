@@ -17,11 +17,11 @@
 package cz.paulrz.montecarlo.random;
 
 import cz.paulrz.montecarlo.parallel.CpuPool;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.exception.NullArgumentException;
-import org.apache.commons.math.exception.OutOfRangeException;
-import org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.exception.MathInternalError;
+import org.apache.commons.math3.exception.NullArgumentException;
+import org.apache.commons.math3.exception.OutOfRangeException;
+import org.apache.commons.math3.stat.descriptive.AbstractUnivariateStatistic;
+import org.apache.commons.math3.util.FastMath;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -159,7 +159,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
      * @param p the percentile value to compute
      * @return the value of the statistic applied to the stored data
      */
-    public double evaluate(final double p) throws MathException {
+    public double evaluate(final double p) {
         return evaluate(getDataRef(), p);
     }
 
@@ -189,7 +189,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
      * @throws IllegalArgumentException if <code>values</code> is null
      *     or p is invalid
      */
-    public double evaluate(final double[] values, final double p) throws MathException {
+    public double evaluate(final double[] values, final double p) {
         test(values, 0, 0);
         return evaluate(values, 0, values.length, p);
     }
@@ -219,12 +219,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
      *
      */
     public double evaluate( final double[] values, final int start, final int length) {
-        try {
-            return evaluate(values, start, length, quantile);
-        } catch (MathException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            return 0.0;
-        }
+        return evaluate(values, start, length, quantile);
     }
 
      /**
@@ -258,7 +253,7 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
      * input array is null
      */
     public double evaluate(final double[] values, final int begin,
-            final int length, final double p) throws MathException {
+            final int length, final double p) {
 
         test(values, begin, length);
 
@@ -305,9 +300,9 @@ public class ParallelPercentile extends AbstractUnivariateStatistic implements S
             double upper = upperFuture.get();
             return lower + dif * (upper - lower);
         } catch (InterruptedException e) {
-            throw new MathException(e);
+            throw new MathInternalError(e);
         } catch (ExecutionException e) {
-            throw new MathException(e);
+            throw new MathInternalError(e);
         }
     }
 

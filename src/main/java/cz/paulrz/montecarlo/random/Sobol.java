@@ -30,9 +30,9 @@ spyqqqdia@yahoo.com
 package cz.paulrz.montecarlo.random;
 
 
-import org.apache.commons.math.random.BitsStreamGenerator;
-import org.apache.commons.math.random.MersenneTwister;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.random.BitsStreamGenerator;
+import org.apache.commons.math3.random.MersenneTwister;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * <p>Generator for the Sobol sequence. Uses the Gray code counter and bitwise

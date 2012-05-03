@@ -16,7 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * This class represents <a

@@ -16,8 +16,6 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-
 /**
  * Discretization of a stochastic process over given time interval
  * 
@@ -32,7 +30,7 @@ public interface Discretization {
      * @param dt Time step
      * @return Drift value step
      */
-    double drift(StochasticProcess1D process, double t, double x, double dt) throws FunctionEvaluationException;
+    double drift(StochasticProcess1D process, double t, double x, double dt);
 
     /**
      * Diffusion component discretization
@@ -43,5 +41,5 @@ public interface Discretization {
      * @param dt Time step
      * @return Diffusion value step
      */
-    double diffusion(StochasticProcess1D process, double t, double x, double dt) throws FunctionEvaluationException;
+    double diffusion(StochasticProcess1D process, double t, double x, double dt);
 }

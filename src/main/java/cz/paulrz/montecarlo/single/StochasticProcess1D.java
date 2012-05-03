@@ -16,8 +16,6 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.FunctionEvaluationException;
-
 /**
  * Base class of stochastic processes
  * 
@@ -57,7 +55,7 @@ public abstract class StochasticProcess1D implements GenericProcess1D {
      * @param x Position
      * @return drift
      */
-    public abstract double drift(double t, double x) throws FunctionEvaluationException;
+    public abstract double drift(double t, double x);
 
     /**
      * Diffusion component of stochastic process
@@ -66,7 +64,7 @@ public abstract class StochasticProcess1D implements GenericProcess1D {
      * @param x Position
      * @return diffusion
      */
-    public abstract double diffusion(double t, double x) throws FunctionEvaluationException;
+    public abstract double diffusion(double t, double x);
 
     /**
      * Returns position after time interval dt
@@ -77,7 +75,7 @@ public abstract class StochasticProcess1D implements GenericProcess1D {
      * @param dw Standard Brownian Step
      * @return Position after time step
      */
-    public double evolve(final double t, final double x, final double dt, final double dw) throws FunctionEvaluationException {
+    public double evolve(final double t, final double x, final double dt, final double dw) {
         return x + discretization.drift(this, t, x, dt)
                 + discretization.diffusion(this, t, x, dt) * dw;
     }

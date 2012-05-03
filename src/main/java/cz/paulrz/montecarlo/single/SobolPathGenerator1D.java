@@ -3,7 +3,6 @@ package cz.paulrz.montecarlo.single;
 import cz.paulrz.montecarlo.random.BrownianBridge;
 import cz.paulrz.montecarlo.random.InverseCumulativeNormal;
 import cz.paulrz.montecarlo.random.Sobol;
-import org.apache.commons.math.MathException;
 
 /**
  * Path generator that uses a low-discrepancy Sobol generator
@@ -51,7 +50,7 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
      *
      * @return Path for the stochastic process
      */
-    public Path next() throws MathException {
+    public Path next() {
         Path path = null;
 
         while(path == null)
@@ -62,7 +61,7 @@ public final class SobolPathGenerator1D implements PathGenerator1D {
         return path;
     }
 
-    private Path getNext() throws MathException {
+    private Path getNext() {
         final double[] uniform = generator.nextPoint();
         Path path = new Path(timeSteps, dt);
         path.addValue(process.getInitialX());

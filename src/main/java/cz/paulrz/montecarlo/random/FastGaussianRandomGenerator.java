@@ -1,7 +1,7 @@
 package cz.paulrz.montecarlo.random;
 
-import org.apache.commons.math.random.NormalizedRandomGenerator;
-import org.apache.commons.math.random.MersenneTwister;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.MersenneTwister;
 
 /**
  * User: paul

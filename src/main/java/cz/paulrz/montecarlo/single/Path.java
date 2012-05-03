@@ -16,7 +16,7 @@
  */
 package cz.paulrz.montecarlo.single;
 
-import org.apache.commons.math.exception.OutOfRangeException;
+import org.apache.commons.math3.exception.OutOfRangeException;
 
 /**
  * Path is a sample of stochastic process's path discretized with uniform time
@@ -72,7 +72,7 @@ public final class Path {
      * Adds a new value to the end of path
      * 
      * @param value Value to add
-     * @throws org.apache.commons.math.exception.OutOfRangeException The exception is thrown if path is complete,
+     * @throws org.apache.commons.math3.exception.OutOfRangeException The exception is thrown if path is complete,
      *             i.e. number of points added equals to path's length
      */
     public void addValue(double value) throws OutOfRangeException {

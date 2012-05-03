@@ -1,8 +1,8 @@
 package cz.paulrz.montecarlo.accumulator;
 
 import cz.paulrz.montecarlo.single.MaxMinClose;
-import org.apache.commons.math.stat.descriptive.SummaryStatistics;
-import org.apache.commons.math.util.FastMath;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
+import org.apache.commons.math3.util.FastMath;
 
 /**
  * Accumulator that collects statistics over 3 parameters:

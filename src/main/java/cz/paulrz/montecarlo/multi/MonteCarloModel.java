@@ -2,8 +2,7 @@ package cz.paulrz.montecarlo.multi;
 
 import cz.paulrz.montecarlo.accumulator.Accumulator;
 import cz.paulrz.montecarlo.single.IMonteCarloModel;
-import org.apache.commons.math.MathException;
-import org.apache.commons.math.random.NormalizedRandomGenerator;
+import org.apache.commons.math3.random.NormalizedRandomGenerator;
 
 /**
  * User: paul
@@ -63,7 +62,7 @@ public class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel<TValu
      *
      * @param samples Number of paths to add
      */
-    public int addSamples(int samples) throws MathException {
+    public int addSamples(int samples) {
         final int allSamples = useAntithetic ? samples*2 : samples;
 
         for (int i = 0; i < allSamples; ++i) {
@@ -74,7 +73,7 @@ public class MonteCarloModel<TValue, OutValue> implements IMonteCarloModel<TValu
         return samples;
     }
 
-    public int addSamples(int minSamples, double eps, int maxSteps) throws MathException {
+    public int addSamples(int minSamples, double eps, int maxSteps) {
         addSamples(minSamples);
         Accumulator<TValue, OutValue> prev = summary.deepCopy();
         int steps = 1;
