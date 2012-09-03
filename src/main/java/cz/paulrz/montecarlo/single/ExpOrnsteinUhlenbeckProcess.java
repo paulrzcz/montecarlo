@@ -76,6 +76,6 @@ public class ExpOrnsteinUhlenbeckProcess extends StochasticProcess1D {
 
     @Override
     public String toString() {
-        return "OUP : x0 = "+x0+"; expMu = "+ expMu + "; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
+        return "EOUP : x0 = "+x0+"; expMu = "+ expMu + "; mu = "+mu+"; sigma = "+sigma+"; theta = "+theta;
     }
 }
