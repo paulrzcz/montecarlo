@@ -39,18 +39,20 @@ public class FokkerLikelihood implements Likelihood {
         Mesh mesh = new Mesh(min, xsize, max, 0.0, points.length, points.length*dt);
 
         // make a delta function at the start
-        double[] x = makeInitialDistribution(points[0], min, max, dx);
+
 
         double y = 0.0;
 
-        final FokkerOperator operator = new FokkerOperator(process, mesh);
+        final ImplicitStencil operator = new FokkerEulerOperator(process, mesh);
 
-        for(int i=1; i< points.length; ++i) {
+        for(int i=0; i< points.length - 1; ++i) {
+            double[] x = makeInitialDistribution(points[i], min, dx);
             // estimate in dt time
-            x = makeStep(x, operator, dt*(i-1));
+            x = makeStep(x, operator, dt*i);
             // find log probability
             // sum probability
-            y += FastMath.log(interpolate(x, min, dx, points[i]));
+            final double p = interpolate(x, min, dx, points[i+1]);
+            y += FastMath.log(p);
         }
 
         return y;
@@ -69,40 +71,25 @@ public class FokkerLikelihood implements Likelihood {
     }
 
     private static double[] makeStep(double[] x, ImplicitStencil operator, double t) {
-        final int length = x.length;
-        final double[] result = new double[length];
-
         final TridiagonalOperator trop = operator.createOperator(t);
         final double[] rhs = operator.createRhs(x, t);
 
         return trop.solveFor(rhs);
     }
 
-    private double[] makeInitialDistribution(double point, double min, double max, double dx) {
+    private double[] makeInitialDistribution(double point, double min, double dx) {
         final double[] x0 = new double[xsize];
-        final double index = (point - min) / dx;
-        final int minIndex = (int)FastMath.floor(index);
-        final int maxIndex = (int)FastMath.ceil(index);
+        final double d = min - point;
 
-        if (maxIndex == minIndex) {
-            for(int i=0; i<xsize; ++i) {
-                x0[i] = 0.0;
-                if (i == minIndex) {
-                    x0[i] = 1/dx;
-                }
-            }
-        } else {
-            final double b = (index - minIndex)/dx;
-            final double a = (maxIndex - index)/dx;
-            for(int i=0; i<xsize; ++i) {
-                x0[i] = 0.0;
-                if (i == minIndex) {
-                    x0[i] = a;
-                } else if (i == maxIndex) {
-                    x0[i] = b;
-                }
-            }
+        for(int i=0; i < xsize; ++i) {
+            x0[i] = nascent(d + dx*i, dx);
         }
+
         return x0;
+    }
+
+
+    private static double nascent(double x, double eps) {
+        return FastMath.max(1 - FastMath.abs(x/eps), 0.0) / eps;
     }
 }

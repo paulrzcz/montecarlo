@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da67d0ea-6154-43c9-a24f-2b83976f0bcc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/ImplicitStencil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/Likelihood.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/Mesh.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/TridiagonalOperator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/TridiagonalTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerEulerOperator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" afterPath="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java" />
     </list>
     <ignored path="montecarlo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +37,20 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" line="41" class="cz.paulrz.montecarlo.estimator.FokkerLikelihood" package="cz.paulrz.montecarlo.estimator">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" line="45" class="cz.paulrz.montecarlo.estimator.FokkerLikelihood" package="cz.paulrz.montecarlo.estimator">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" line="57" class="cz.paulrz.montecarlo.estimator.FokkerLikelihood" package="cz.paulrz.montecarlo.estimator">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -96,19 +104,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FokkerTests.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FokkerTests.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="43" selection-start="220" selection-end="237" vertical-scroll-proportion="0.0">
+            <state line="20" column="67" selection-start="590" selection-end="590" vertical-scroll-proportion="0.53571427">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FokkerLikelihood.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FokkerLikelihood.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1087" selection-end="1158" vertical-scroll-proportion="0.20879121">
+            <state line="48" column="67" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -137,7 +145,16 @@
       <file leaf-file-name="FokkerOperator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="54" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+            <state line="29" column="41" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FokkerEulerOperator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerEulerOperator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="47" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ParallelMonteCarloModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/MonteCarloModel.java" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/ExpOrnsteinUhlenbeckProcess.java" />
@@ -187,9 +203,10 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/Mesh.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/ImplicitStencil.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerOperator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/TridiagonalTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerEulerOperator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java" />
       </list>
     </option>
   </component>
@@ -313,6 +330,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="montecarlo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estimator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -371,7 +418,7 @@
       <recent name="cz.paulrz.montecarlo.random" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TridiagonalTests">
+  <component name="RunManager" selected="JUnit.FokkerTests.testGbm">
     <configuration default="false" name="RngTest.testFastGenerator" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
@@ -709,7 +756,11 @@
       <created>1346678184258</created>
       <updated>1346678184258</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="FokkerOperator with Crank-Nicolson stencil (not stable on huge jumps)">
+      <created>1349360387307</created>
+      <updated>1349360387308</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -784,7 +835,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ExpOrnsteinUhlenbeckProcess - fixed toString method" />
+    <option name="LAST_COMMIT_MESSAGE" value="FokkerOperator with Crank-Nicolson stencil (not stable on huge jumps)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -797,7 +848,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Sab as reduced Sabr process" />
     <MESSAGE value="BrownianBridge implementation" />
     <MESSAGE value="1D Path construction is improved by brownian bridge" />
     <MESSAGE value="Version 1.5" />
@@ -822,6 +872,7 @@
     <MESSAGE value="Code clean-ups&#10;" />
     <MESSAGE value="Readme added" />
     <MESSAGE value="ExpOrnsteinUhlenbeckProcess - fixed toString method" />
+    <MESSAGE value="FokkerOperator with Crank-Nicolson stencil (not stable on huge jumps)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -861,11 +912,6 @@
         <state line="24" column="19" selection-start="959" selection-end="959" vertical-scroll-proportion="0.22350994" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/GeometricBrownianMotionProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="1032" selection-end="1032" vertical-scroll-proportion="-0.18041237" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/GbmEstimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="13" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" />
@@ -885,23 +931,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="54" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/TridiagonalOperator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="0" selection-start="1609" selection-end="1609" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="43" selection-start="220" selection-end="237" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -917,7 +949,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerLikelihood.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1087" selection-end="1158" vertical-scroll-proportion="0.20879121">
+        <state line="48" column="67" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerEulerOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="47" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/estimator/FokkerOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="41" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/paulrz/montecarlo/single/GeometricBrownianMotionProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="11" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.33241758">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/paulrz/montecarlo/tests/FokkerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="67" selection-start="590" selection-end="590" vertical-scroll-proportion="0.53571427">
           <folding />
         </state>
       </provider>
