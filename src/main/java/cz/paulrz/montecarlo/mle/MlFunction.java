@@ -18,7 +18,7 @@ final class MlFunction implements MultivariateFunction {
         this.factory = factory;
     }
 
-    public double value(double[] point) throws IllegalArgumentException {
+    public double value(double[] point) {
         double sum = 0.0;
         for(int i=1; i < data.length; ++i) {
             sum += onePoint(data[i-1], data[i], point);
