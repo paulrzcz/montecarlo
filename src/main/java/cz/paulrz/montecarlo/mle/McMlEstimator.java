@@ -24,7 +24,7 @@ public class McMlEstimator {
         SimplexOptimizer optimizer = new SimplexOptimizer(new SimplePointChecker<PointValuePair>(0.01, 0.3));
 
         return
-                optimizer.optimize(5000, function,
-                        GoalType.MAXIMIZE, simplex);
+                optimizer.optimize(100, function,
+                        GoalType.MAXIMIZE, factory.getStartingPoint());
     }
 }
