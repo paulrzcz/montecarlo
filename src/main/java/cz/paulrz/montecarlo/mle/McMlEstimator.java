@@ -21,12 +21,10 @@ public class McMlEstimator {
 
     public PointValuePair estimate() {
         NelderMeadSimplex simplex = new NelderMeadSimplex(factory.getStartConfiguration());
-        SimplexOptimizer optimizer = new SimplexOptimizer(new SimplePointChecker<PointValuePair>());
-        optimizer.setSimplex(simplex);
-
+        SimplexOptimizer optimizer = new SimplexOptimizer(new SimplePointChecker<PointValuePair>(0.01, 0.3));
 
         return
-                optimizer.optimize(100, function,
-                        GoalType.MAXIMIZE, factory.getStartingPoint());
+                optimizer.optimize(5000, function,
+                        GoalType.MAXIMIZE, simplex);
     }
 }
